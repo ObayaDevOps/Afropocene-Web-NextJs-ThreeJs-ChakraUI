@@ -204,12 +204,12 @@ const ExhibitionList = ({exhibitionPage}) => {
   return (
     <Container maxW={'7xl'} p="3">
       <Head>
-        <title>Exhibition Archive: Afropocene</title>
+        <title>Capsule Exhibition Archive: Afropocene</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 
-      <Heading as="h1" size={'3xl'}>Exhibitions at the StudioLab!</Heading>
+      <Heading as="h1" size={'3xl'}>The Capsule Gallery</Heading>
       <Box
         marginTop={{ base: '1', sm: '5' }}
         display="flex"

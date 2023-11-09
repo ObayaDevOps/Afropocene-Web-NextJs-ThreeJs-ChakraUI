@@ -314,7 +314,31 @@ import theme from './theme';
           href: '/studios/contact-enquiry',
         },
       ],
-    },    
+    }, 
+
+    {
+      label: 'Capsule Gallery',
+      children: [
+        {
+          label: 'About The Capsule',
+          subLabel: '',
+          href: '/capsule-gallery/about-capsule',
+        },
+        {
+          label: 'Odur Ronald - Republic of This and That',
+          subLabel: 'Currently Showing',
+          href: '/capsule-gallery/republic-of-this-and-that',
+        },
+
+        // {
+        //   label: 'Capsule Gallery Archive',
+        //   subLabel: 'Past Exhibitions',
+        //   href: '/capsule-gallery/capsule-archive',
+        // },
+      ],
+    }, 
+    
+    
     {
       label: 'Tech+Art',
       children: [
