@@ -184,7 +184,7 @@ const imageGridImages =[
                   </List> */}
                 </SimpleGrid>
               </Box>
-              <Box>
+              <Box pb={20}>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
                   color={useColorModeValue('yellow.500', 'yellow.300')}
