@@ -87,12 +87,12 @@ const imageGridImages =[
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Odur: Republic of This and That Exhibition
+                Odur: Republic of This and That
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'2xl'}>
+                fontSize={'xl'}>
                 The Capsule - 11/09/23 to 11/01/24
               </Text>
             </Box>
@@ -119,6 +119,12 @@ const imageGridImages =[
                   fontWeight={'300'}>
                     
                 </Text>
+                <Heading
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+                About the Exhibition
+              </Heading>
                 <Text fontSize={'lg'}>
                 The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
                 </Text>
