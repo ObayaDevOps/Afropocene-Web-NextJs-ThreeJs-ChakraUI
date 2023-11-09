@@ -93,7 +93,7 @@ const imageGridImages =[
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                The Capsule
+                The Capsule - 11/09/23 to 11/01/24
               </Text>
             </Box>
             <Box>
