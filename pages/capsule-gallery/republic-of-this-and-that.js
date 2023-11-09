@@ -120,14 +120,17 @@ const imageGridImages =[
                     
                 </Text>
                 <Heading
+                pt={20}
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
                 About the Exhibition
               </Heading>
+              <Box pb={20}>
                 <Text fontSize={'lg'}>
                 The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
                 </Text>
+              </Box>
               
               </VStack>
 
