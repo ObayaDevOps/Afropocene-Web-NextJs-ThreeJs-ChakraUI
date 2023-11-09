@@ -109,7 +109,9 @@ const imageGridImages =[
                 <StackDivider
                   borderColor={useColorModeValue('gray.200', 'gray.600')}
                 />
-              }>
+              }
+              
+              >
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
                   color={useColorModeValue('gray.500', 'gray.400')}
@@ -118,13 +120,33 @@ const imageGridImages =[
                     
                 </Text>
                 <Text fontSize={'lg'}>
-                The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries.                </Text>
+                The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
+                </Text>
               
               </VStack>
 
               <Box>
                 <ImageGridReactPhotoGallery />
               </Box>
+
+              <SimpleGrid columns={2} spacing={10}>
+                <Box>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                </Box>
+                  <Text fontSize={'lg'}>
+                    The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
+                  </Text>
+              </SimpleGrid>
+
+              <SimpleGrid columns={2} spacing={10}>
+              <Text fontSize={'lg'}>
+                    The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
+                  </Text>
+                <Box>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                </Box>
+
+              </SimpleGrid>
 
 
 
