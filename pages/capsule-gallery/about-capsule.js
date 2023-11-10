@@ -16,6 +16,8 @@ import {
 
   import Head from 'next/head'
   import NextLink from 'next/link'
+  import NextImage from 'next/image'
+
   
   const SocialButton = ({
     children,
@@ -63,8 +65,16 @@ import {
           justify={'center'}
           px={useBreakpointValue({ base: 6, md: 8 })}
         //   bgGradient={'linear(to-r, blackAlpha.900, transparent)'}
+        mt={{base:-24}}
           >
           <Stack maxW={'2xl'} align={'center'} spacing={6}>
+
+            <Box mb={{base:-12, md: -6}} mt={{md:16,lg:20}}>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg" alt="work by kharumwa" placeholder="blur" 
+                blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg" width={500/2} height={500/2}/>
+            </Box>
+
+            <Box>
             <Text
               color={useColorModeValue('black', 'white')}
               fontWeight={700}
@@ -72,16 +82,18 @@ import {
               textAlign={'center'}
               fontFamily={'Space Mono'}
               fontSize={useBreakpointValue({ base: '2xl', md: '2xl', lg:'4xl' })}
-              paddingTop={useBreakpointValue({base: '0', md: '0'})}
+              // paddingTop={useBreakpointValue({base: '0', md: '0'})}
+              
               >
 
                 The Capsule is an Independent Public Arts Platform established in 2023 by the Afropocene StudioLab dedicated
                 to exploring experimental, immersive and alternative exhibition formats in Kampala.
                 ​
                 </Text>
+                </Box>
                 
             <Stack 
-            direction={'row'}
+            direction={'column'}
             paddingBottom={useBreakpointValue({base: '5em', md: '0'})}
 
             >
@@ -92,17 +104,32 @@ import {
                 color={useColorModeValue('white', 'black')}
                 fontFamily={'Space Mono'}
                 _hover={{ bg: 'whiteAlpha.500' }}
+                mt={{base:14}}
                 >
-                Show me more
+                Show me More
               </Button>
               </NextLink>
+
+              <NextLink href="https://maps.app.goo.gl/C8jkrqPrgfi8WPhm6" passHref>
+              <Button
+                bg={useColorModeValue('black', 'white')}
+                rounded={'full'}
+                color={useColorModeValue('white', 'black')}
+                fontFamily={'Space Mono'}
+                _hover={{ bg: 'whiteAlpha.500' }}
+                mt={{base:14}}
+                >
+                Visit the Gallery
+              </Button>
+              </NextLink>
+
 
 
             </Stack>
           </Stack>
 
-          <Box pt={{base: 0, md:4}}>
-          <SocialButton label={'Instagram'}  href={'https://www.instagram.com/afropocenethecapsule/'}>
+          <Box pt={{base: -26, md:4}} pb={{md: 12}}>
+          <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocenethecapsule/'}>
                   <FaInstagram />
                 </SocialButton>
           </Box>

@@ -11,27 +11,50 @@ const DynamicTypeWriterWithNoSSR = dynamic(
     { ssr: false }
   )
 
+  function ToastExample() {
+    const toast = useToast()
+    return (
+      <Button
+        onClick={() =>
+          toast({
+            title: 'Account created.',
+            description: "We've created your account for you.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
+        }
+      >
+        Show Toast
+      </Button>
+    )
+  }
+
 
 export default function LandingPage(props) {
   const landingPageContent  = props.pageContent[0] || [];
 
-  // const toast = useToast();
-  // const id = 'test-toast'
 
 
-  // useEffect(() => {
-  //   // Show toast every 5 seconds.
-  //     toast({
-  //       title: "Click here to see latest Workshop/Exhibition",
-  //       id,
-  //       // description: `Time ${new Date()}`,
-  //       status: "info",
-  //       position: "bottom",
-  //       duration: 12000,
-  //       isClosable: true
-  //     });
 
-  // }, []); // Passing in empty array so this will only get called on mount
+  // /https://stackoverflow.com/questions/58314040/how-can-i-show-a-chakra-ui-toast-programmatically
+  const toast = useToast();
+  const id = 'test-toast'
+
+
+  useEffect(() => {
+    // Show toast every 5 seconds.
+      toast({
+        title: "Now On: Odur: Republic of This and That Capsule Exhibition",
+        id,
+        // description: `Time ${new Date()}`,
+        status: "info",
+        position: "bottom",
+        duration: 12000,
+        isClosable: true
+      });
+
+  }, []); // Passing in empty array so this will only get called on mount
   
   
   return (
@@ -41,6 +64,7 @@ export default function LandingPage(props) {
       <AlertIcon />
       Click here to see latest Workshop/Exhibition 
       </Alert> */}
+      {/* <CustomToastExample /> */}
 
     <SimpleGrid
     columns={1}

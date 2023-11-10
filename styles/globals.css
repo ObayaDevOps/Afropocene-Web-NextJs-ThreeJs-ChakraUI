@@ -23,9 +23,3 @@ a {
   outline: 0 !important;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
-
-
-.react-images__view{
-  display: inline-block;
-  left: 30%
-}
