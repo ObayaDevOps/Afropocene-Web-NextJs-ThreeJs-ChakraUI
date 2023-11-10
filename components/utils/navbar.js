@@ -317,7 +317,7 @@ import theme from './theme';
     }, 
 
     {
-      label: 'Capsule Gallery',
+      label: 'The Capsule',
       children: [
         {
           label: 'About The Capsule',

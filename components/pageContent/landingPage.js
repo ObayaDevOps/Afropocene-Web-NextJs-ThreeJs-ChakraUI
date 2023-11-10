@@ -45,7 +45,7 @@ export default function LandingPage(props) {
   useEffect(() => {
     // Show toast every 5 seconds.
       toast({
-        title: "Now On: Odur: Republic of This and That Capsule Exhibition",
+        title: "Now On at The Capsule: Odur: Republic of This and That",
         id,
         // description: `Time ${new Date()}`,
         status: "info",

@@ -8,6 +8,7 @@ import {
     useBreakpointValue,
     chakra,
     VisuallyHidden,
+    useColorMode,
 
     useColorModeValue
   } from '@chakra-ui/react';
@@ -48,6 +49,12 @@ import {
   
 
   export default function WithBackgroundImage() {
+
+    const capsuleLogoBlack = "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg";
+    const capsuleLogoWhite = "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699627533/Black_White_Minimalist_Business_Logo_3_jmyrq6.svg";
+
+    const { colorMode, toggleColorMode } = useColorMode()
+
     return (
       <Flex
         w={'full'}
@@ -69,9 +76,12 @@ import {
           >
           <Stack maxW={'2xl'} align={'center'} spacing={6}>
 
+          {/* <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/> */}
+
+
             <Box mb={{base:-12, md: -6}} mt={{md:16,lg:20}}>
-                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg" alt="work by kharumwa" placeholder="blur" 
-                blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg" width={500/2} height={500/2}/>
+                <NextImage src={colorMode === 'light' ? capsuleLogoBlack:  capsuleLogoWhite} alt="capsule logo" placeholder="blur" 
+                blurDataURL={capsuleLogoBlack} width={500/2} height={500/2}/>
             </Box>
 
             <Box>
