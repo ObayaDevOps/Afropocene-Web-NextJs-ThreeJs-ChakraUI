@@ -97,7 +97,7 @@ import {
             paddingBottom={useBreakpointValue({base: '5em', md: '0'})}
 
             >
-              <NextLink href="../capsule-gallery/capsule-archive" passHref>
+              <NextLink href="https://www.afropocene.com/capsule-gallery/republic-of-this-and-that" passHref>
               <Button
                 bg={useColorModeValue('black', 'white')}
                 rounded={'full'}
