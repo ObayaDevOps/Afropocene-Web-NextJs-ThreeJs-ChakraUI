@@ -93,7 +93,10 @@ const imageGridImages =[
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'xl'}>
+                fontSize={'xl'}
+                fontFamily={'Space Mono'}
+                
+                >
                 The Capsule - 11/09/23 to 11/01/24
               </Text>
             </Box>
@@ -106,11 +109,11 @@ const imageGridImages =[
             <Stack
               spacing={{ base: 4, sm: 6, lg: 20 }}
               direction={'column'}
-              divider={
-                <StackDivider
-                  borderColor={useColorModeValue('gray.200', 'gray.600')}
-                />
-              }
+              // divider={
+              //   <StackDivider
+              //     borderColor={useColorModeValue('gray.200', 'gray.600')}
+              //   />
+              // }
               
               >
               <VStack spacing={{ base: 4, sm: 6 }}>
@@ -127,9 +130,21 @@ const imageGridImages =[
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
                 About the Exhibition
               </Heading>
-              <Box pb={20}>
-                <Text fontSize={'lg'}>
+              <Box pb={{base: 20,lg:12}}>
+                <Text fontSize={'lg'}
+                  fontFamily={'Space Mono'}
+
+                >
                 The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
+                </Text>
+                <Text fontSize={'lg'} pt={{lg: 6}} fontFamily={'Space Mono'}  >
+                  Odur Ronald invites us to contemplate the complexities of free movement, belonging and
+                  personhood through the motif of the passport. By denting, burning, stitching and weaving,
+                  reclaimed aluminium he transforms this commonplace and often discarded material into highly
+                  stylised sculptural reconstructions of everyday objects that capture the current moment, and
+                  seemingly freeze time. The Republic of This and That offers an entry point into a critical re-
+                  evaluation of the structure of modern society that makes us look twice and draws us in to look
+                  closer.                
                 </Text>
               </Box>
               
@@ -144,17 +159,77 @@ const imageGridImages =[
                 <Box>
                 <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
                 </Box>
-                  <Text fontSize={'lg'}>
-                    The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
-                  </Text>
+
+                <Box>
+                  <Heading
+                  pt={{base:20, lg: 0}}
+                  pb={{lg:12}}
+                  lineHeight={1.1}
+                  fontWeight={600}
+                  fontSize={{ base: '2xl', sm: '4xl', lg: '3xl' }}>
+                  SP Residency &amp; 32 commission
+                  </Heading>
+                  <Text fontSize={'lg'} fontFamily={'Space Mono'} >
+                  Odur began using the aluminum plates to materialize his ideas during a Silhouette residency at
+                  Afriart Gallery in 2020 which culminated in the first passport ‘The Republic of Contemporary Art’.
+                  He returned to this format for the installation titled ‘Ekisaakaate’ (2023), which was
+                  commissioned by Prince Claus Fund for the occasion of the phase 1 opening of 32 Degrees
+                  East Arts Trust. The installation, consisted of 50 aluminium passport sculptures suspended from
+                  door frames, and explored themes of boundaries and borders.
+                    </Text>
+                </Box>
+
               </SimpleGrid>
 
+
               <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20} pb={20}>
-              <Text fontSize={'lg'}>
-                    The Republic of This and That presents an artistic exploration and commentary on the concepts of unrestricted and restricted mobility, belonging, and personal identity. Using aluminum printing plates and copper wire, Odur skillfully reimagines traditional passport booklets as metallic representations, each containing visa endorsement stamps on various pages. This conceptual approach effectively captures the multifaceted challenges, obstacles, and restrictions imposed by borders and boundaries. 
-                  </Text>
+              <Box>
+              <Heading
+                  pt={{base:20, lg: 0}}
+                  pb={{lg:12}}
+                  lineHeight={1.1}
+                  fontWeight={600}
+                  fontSize={{ base: '2xl', sm: '4xl', lg: '3xl' }}>
+                  AU 20 Residency
+                  </Heading>
+                <Text fontSize={'lg'} fontFamily={'Space Mono'} >
+                The African Union residency (AU20) in collaboration with UNDP Africa, and implemented by
+                Africa No Filter, brought 10 artists from across the continent to Dakar to create works under the
+                theme Our Africa, Our Future. The aim of the residency was to support works which shifted
+                narratives and highlight the valuable contributions of African artists in sharing African stories.
+                The completed works were also exhibited at the AU headquarters in Addis Ababa Ethiopia at
+                the margins of the AU summit 2023.
+                </Text>
+              </Box>
                 <Box>
                 <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                </Box>
+              </SimpleGrid>
+
+
+              <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>
+                <Box>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                </Box>
+
+                <Box>
+                  <Heading
+                  pt={{base:20, lg: 0}}
+                  pb={{lg:12}}
+                  lineHeight={1.1}
+                  fontWeight={600}
+                  fontSize={{ base: '2xl', sm: '4xl', lg: '3xl' }}>
+                  14th Kaunas Biennial
+                  </Heading>
+                  <Text fontSize={'lg'} fontFamily={'Space Mono'} >
+                  As part of the 14th Kaunas Biennial, under the theme of Long-distance Friendships Odur’s
+                  passports were presented at the Kaunas Central Post Office by curator Alicia Knock. The
+
+                  defunct post office was reanimated by the exhibition as a space to reflect on exchange and
+                  togetherness, transnational solidarity, and friendship, and included works and correspondence
+                  by African and Eastern European artists. Odur&#39;s contribution highlighted the challenges of visa
+                  policies and lack of mobility which affects artists from both regions.
+                    </Text>
                 </Box>
 
               </SimpleGrid>
@@ -162,7 +237,9 @@ const imageGridImages =[
 
 
 
-              <Box>
+
+
+              {/* <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
                   color={useColorModeValue('yellow.500', 'yellow.300')}
@@ -178,13 +255,9 @@ const imageGridImages =[
                     <ListItem>Sculpture</ListItem>{' '}
                     <ListItem>Visual Art</ListItem>
                   </List>
-                  {/* <List spacing={2}>
-                    <ListItem>Anti‑magnetic</ListItem>
-                    <ListItem>Chronometer</ListItem>
-                    <ListItem>Small seconds</ListItem>
-                  </List> */}
                 </SimpleGrid>
-              </Box>
+              </Box> */}
+{/* 
               <Box pb={20}>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
@@ -215,7 +288,8 @@ const imageGridImages =[
                     Steel
                   </ListItem>
                 </List>
-              </Box>
+              </Box> */}
+              
             </Stack>
   
             {/* <Button
