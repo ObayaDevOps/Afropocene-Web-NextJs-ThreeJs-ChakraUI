@@ -32,6 +32,64 @@ const imageGridImages =[
         height: 1600,
         caption: "Gallery Space4",
     },
+    {   
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956916/DKR_LOMAN_RESIDENCY_260_edx0ln.jpg",
+      original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956916/DKR_LOMAN_RESIDENCY_260_edx0ln.jpg",
+      width: 6000,
+      height: 4000,
+      caption: "Gallery Space4",
+  },
+  {   
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956915/DKR_LOMAN_RESIDENCY_234_trfxro.jpg",
+    original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956915/DKR_LOMAN_RESIDENCY_234_trfxro.jpg",
+    width: 6000,
+    height: 4000,
+    caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956908/DKR_LOMAN_RESIDENCY_261_qzqpps.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956908/DKR_LOMAN_RESIDENCY_261_qzqpps.jpg",
+  width: 6000,
+  height: 4000,
+  caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2223_dt22ni.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2223_dt22ni.jpg",
+  width: 4032,
+  height: 3024,
+  caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956906/DKR_LOMAN_RESIDENCY_271_pvksd7.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956906/DKR_LOMAN_RESIDENCY_271_pvksd7.jpg",
+  width: 6000,
+  height: 4000,
+  caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956697/IMG_2241_arzcyt.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956697/IMG_2241_arzcyt.jpg",
+  width: 4032,
+  height: 3024,
+  caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2217_jzmbtf.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2217_jzmbtf.jpg",
+  width: 3024,
+  height: 4032,
+  caption: "Gallery Space4",
+},
+
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956907/DKR_LOMAN_RESIDENCY_816_flwscb.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956907/DKR_LOMAN_RESIDENCY_816_flwscb.jpg",
+  width: 6000,
+  height: 4000,
+  caption: "Gallery Space4",
+},
+
 
 
         

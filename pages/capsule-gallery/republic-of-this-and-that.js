@@ -93,7 +93,7 @@ const imageGridImages =[
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'xl'}
+                fontSize={{base:'lg',md:'xl'}}
                 fontFamily={'Space Mono'}
                 
                 >
@@ -157,7 +157,10 @@ const imageGridImages =[
 
               <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>
                 <Box>
-                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699957481/Screenshot_from_2023-11-14_11-23-35_afwrej.png"
+                 alt="work by kharumwa" placeholder="blur" 
+                 blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699957481/Screenshot_from_2023-11-14_11-23-35_afwrej.png" 
+                 width={1400} height={1702}/>
                 </Box>
 
                 <Box>
@@ -202,14 +205,18 @@ const imageGridImages =[
                 </Text>
               </Box>
                 <Box>
-                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956908/DKR_LOMAN_RESIDENCY_824_tlknuh.jpg" 
+                alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" 
+                width={4000} height={6000}/>
                 </Box>
               </SimpleGrid>
 
 
               <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>
                 <Box>
-                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" width={720} height={1280}/>
+                <NextImage src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956907/DKR_LOMAN_RESIDENCY_823_egkmga.jpg" 
+                alt="work by kharumwa" placeholder="blur" blurDataURL="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg" 
+                width={6000} height={4000}/>
                 </Box>
 
                 <Box>
