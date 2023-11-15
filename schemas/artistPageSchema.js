@@ -60,8 +60,8 @@ export default defineType({
         name: 'socialMediaUrl',
         title: 'Link Social Media',
         type: 'url',
-        validation: Rule => [ 
-          Rule.uri({ scheme: ['http', 'https'] }),
+        validation: (rule) => [ 
+          rule.uri({ scheme: ['http', 'https'] }),
           rule.required(),
         ],
       }),
