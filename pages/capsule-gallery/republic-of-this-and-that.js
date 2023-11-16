@@ -83,27 +83,26 @@ const imageGridImages =[
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <HStack>
-            <Box as={'header'}>
-              <Heading
-                lineHeight={1.1}
-                fontWeight={600}
-                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Odur: Republic of This and That
-              </Heading>
-              <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
-                fontWeight={300}
-                fontSize={{base:'lg',md:'xl'}}
-                fontFamily={'Space Mono'}
-                
-                >
-                The Capsule - 11/09/23 to 11/01/24
-              </Text>
-            </Box>
-            <Box>
-              <NextImage src={republicPoster} alt="work by kharumwa" placeholder="blur"/>
-            </Box>
+              <Box as={'header'}>
+                <Heading
+                  lineHeight={1.1}
+                  fontWeight={600}
+                  fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+                  Odur: Republic of This and That
+                </Heading>
+                <Text
+                  color={useColorModeValue('gray.900', 'gray.400')}
+                  fontWeight={300}
+                  fontSize={{base:'lg',md:'xl'}}
+                  fontFamily={'Space Mono'} 
+                  >
+                  The Capsule - 11/09/23 to 11/01/24
+                </Text>
+              </Box>
 
+              <Box>
+                <NextImage src={republicPoster} alt="work by kharumwa" placeholder="blur"/>
+              </Box>
             </HStack>
   
             <Stack

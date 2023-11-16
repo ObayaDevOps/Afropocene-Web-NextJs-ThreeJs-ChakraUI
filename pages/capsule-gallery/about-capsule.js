@@ -120,7 +120,7 @@ import {
               </Button>
               </NextLink>
 
-              <NextLink href="https://maps.app.goo.gl/C8jkrqPrgfi8WPhm6" passHref>
+              <NextLink href="https://maps.app.goo.gl/dbMRW9oX3nP6UjZB7" passHref>
               <Button
                 bg={useColorModeValue('black', 'white')}
                 rounded={'full'}
@@ -129,7 +129,7 @@ import {
                 _hover={{ bg: 'whiteAlpha.500' }}
                 mt={{base:14}}
                 >
-                Visit the Gallery
+                Visit The Capsule
               </Button>
               </NextLink>
 
