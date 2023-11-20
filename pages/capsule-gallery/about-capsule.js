@@ -79,7 +79,7 @@ import {
           {/* <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/> */}
 
 
-            <Box mb={{base:-12, md: -6}} mt={{md:16,lg:20}}>
+            <Box mb={{base:-12, md: -6}} mt={{base:20, sm:0, md:16,lg:20}}>
                 <NextImage src={colorMode === 'light' ? capsuleLogoBlack:  capsuleLogoWhite} alt="capsule logo" placeholder="blur" 
                 blurDataURL={capsuleLogoBlack} width={500/2} height={500/2}/>
             </Box>
