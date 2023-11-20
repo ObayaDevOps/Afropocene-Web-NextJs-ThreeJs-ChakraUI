@@ -113,7 +113,7 @@ import {
                 rounded={'full'}
                 color={useColorModeValue('white', 'black')}
                 fontFamily={'Space Mono'}
-                _hover={{ bg: 'whiteAlpha.500' }}
+                _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
                 mt={{base:14}}
                 >
                 Show me More
@@ -126,7 +126,7 @@ import {
                 rounded={'full'}
                 color={useColorModeValue('white', 'black')}
                 fontFamily={'Space Mono'}
-                _hover={{ bg: 'whiteAlpha.500' }}
+                _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
                 mt={{base:14}}
                 >
                 Visit The Capsule
