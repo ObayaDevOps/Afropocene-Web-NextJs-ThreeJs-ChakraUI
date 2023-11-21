@@ -30,7 +30,7 @@ export default function AsciiTorus() {
       
     <Box>
       <Head>
-        <title>Try Scrolling... | Afropocene StudioLab</title>
+        <title>A Symbolic Representation of Our Universe | Afropocene StudioLab</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
 
@@ -67,7 +67,9 @@ function Torusknot(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={0.02} //GOOD
+      scale={0.3} //GOOD
+
+     // scale={0.02} //GOOD
       // scale={0.025}
 
       // scale={clicked ? 1.5 : 1.25}
