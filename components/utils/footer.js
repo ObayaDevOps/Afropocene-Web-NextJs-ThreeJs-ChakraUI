@@ -20,7 +20,7 @@ import {
   import NextLink from 'next/link'
   import africaIcon from '../../public/images/icon/africa.png'
   import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
-
+  import coffee from '../../public/images/icon/buy-me-a-coffee.png'
   
   const SocialButton = ({
     children,
@@ -104,6 +104,15 @@ import {
                 <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
                   <IoMdPlanet />
                 </SocialButton>
+                <Link href="https://www.buymeacoffee.com/afropocene">
+                  <Image 
+                  src={coffee}
+                  width={1090/9}
+                  height={306/9}
+                  alt="Buy Us a Coffee !"
+                  
+                  />
+                </Link>
               </Stack>
             </Stack>
 
