@@ -326,8 +326,13 @@ import theme from './theme';
         },
         {
           label: 'Odur Ronald - Republic of This and That',
-          subLabel: 'Currently Showing',
+          subLabel: 'Previous Showing',
           href: '/capsule-gallery/republic-of-this-and-that',
+        },
+        {
+          label: 'Kaddu Wasswa - Archive',
+          subLabel: 'Currently Showing',
+          href: '/capsule-gallery/kaddu-wasswa-capsule',
         },
 
         // {

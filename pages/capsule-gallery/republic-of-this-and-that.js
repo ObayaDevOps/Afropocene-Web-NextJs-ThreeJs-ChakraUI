@@ -96,7 +96,7 @@ const imageGridImages =[
                   fontSize={{base:'lg',md:'xl'}}
                   fontFamily={'Space Mono'} 
                   >
-                  The Capsule - 11/09/23 to 11/01/24
+                  The Capsule - 11/09/23 to 06/01/24
                 </Text>
               </Box>
 
