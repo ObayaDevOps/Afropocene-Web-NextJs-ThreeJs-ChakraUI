@@ -45,7 +45,7 @@ export default function LandingPage(props) {
   useEffect(() => {
     // Show toast every 5 seconds.
       toast({
-        title: "Now On at The Capsule: Kaddu Wasswa - Archive",
+        title: "Now On at The Capsule: Emma Prempeh - A Constant Yearning",
         id,
         // description: `Time ${new Date()}`,
         status: "info",

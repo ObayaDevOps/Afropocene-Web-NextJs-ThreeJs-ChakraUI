@@ -104,7 +104,7 @@ const imageGridImages =[
               </Box>
 
               <Box>
-                <NextImage src={republicPoster} alt="work by kharumwa" placeholder="blur"/>
+                <NextImage src={republicPoster} alt="work by kharumwa"  height={1190} width={841} placeholder="blur" />
               </Box>
             </HStack>
   
