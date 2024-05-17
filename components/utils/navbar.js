@@ -325,15 +325,21 @@ import theme from './theme';
           href: '/capsule-gallery/about-capsule',
         },
         {
+          label: 'Emma Prempeh - A Constant Yearning',
+          subLabel: 'Currently Showing',
+          href: '/capsule-gallery/prempeh-constant-yearning-capsule',
+        },
+        {
+          label: 'Kaddu Wasswa - Archive',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/kaddu-wasswa-capsule',
+        },
+        {
           label: 'Odur Ronald - Republic of This and That',
           subLabel: 'Previous Showing',
           href: '/capsule-gallery/republic-of-this-and-that',
         },
-        {
-          label: 'Kaddu Wasswa - Archive',
-          subLabel: 'Currently Showing',
-          href: '/capsule-gallery/kaddu-wasswa-capsule',
-        },
+
 
         // {
         //   label: 'Capsule Gallery Archive',

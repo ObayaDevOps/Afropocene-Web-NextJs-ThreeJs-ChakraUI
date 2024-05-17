@@ -209,7 +209,7 @@ const ExhibitionList = ({exhibitionPage}) => {
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 
-      <Heading as="h1" size={'3xl'}>Exhibitions at the StudioLab!</Heading>
+      <Heading as="h1" size={'3xl'}>Exhibitions at the StudioLab</Heading>
       <Box
         marginTop={{ base: '1', sm: '5' }}
         display="flex"
