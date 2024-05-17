@@ -23,6 +23,9 @@ import ImageGridReactPhotoGallery from '../../components/image-grid-Lightbox/ima
 
 import NextImage from 'next/image'
 import republicPoster from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
+import republicPoster2 from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
+
+
 
 import Head from 'next/head'
 
