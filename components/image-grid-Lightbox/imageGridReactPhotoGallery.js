@@ -97,7 +97,7 @@ const imageGridImages =[
   
   ] 
 
-  export default function App() {
+  export default function App(props) {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -113,12 +113,12 @@ const imageGridImages =[
 
   return (
     <Box>
-      <Gallery photos={imageGridImages} onClick={openLightbox} />
+      <Gallery photos={props.imageGridImages} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Box maxW={{base: '85vw',lg: '70vw'}}>
-                <ImageGridSlider slides={imageGridImages} />
+                <ImageGridSlider slides={props.imageGridImages} />
             </Box>
 
           </Modal>

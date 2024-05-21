@@ -31,34 +31,34 @@ import Head from 'next/head'
 
 const imageGridImages =[
   {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-      width: 720,
-      height: 1280,
-      caption: "After Rain (Jeshu John - designerspics.com)",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293661/Emma_flip_frame_.pdf_1_zcijfi.png",
+      width: 1406,
+      height: 1762,
+      caption: "Emma Prempeh",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293666/Emma_flip_frame_.pdf_2_aayxza.png",
+    width: 1409,
+    height: 1046,
+    caption: "Emma Prempeh",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293674/Emma_flip_frame_.pdf_3_wlj9gy.png",
+    width: 1403,
+    height: 1064,
+    caption: "Emma Prempeh",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293670/Emma_flip_frame_.pdf_5_iktc7d.png",
+    width: 1414,
+    height: 2000,
+    caption: "Emma Prempeh",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293676/Emma_flip_frame_.pdf_4_t6kzdn.png",
+    width: 1412,
+    height: 1119,
+    caption: "Emma Prempeh",
   },
       
 
@@ -104,7 +104,7 @@ const imageGridImages =[
               </Box>
 
               <Box>
-                <NextImage src={republicPoster} alt="work by kharumwa"  height={1190} width={841} placeholder="blur" />
+                <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716295170/Untitled_design_5_qpjpqe.png'} alt="Emma Prempeh Capsule" width={841} height={1190}  placeholder="blur" blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716295170/Untitled_design_5_qpjpqe.png'} />
               </Box>
             </HStack>
   
@@ -163,6 +163,11 @@ const imageGridImages =[
                 memory and its representation.
                
                 </Text>
+
+              {/* Photo Gallery */}
+              <Box py={{base: 10, lg: 12}}>
+                <ImageGridReactPhotoGallery imageGridImages={imageGridImages} />
+              </Box>
 
                 <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
                 Prempeh occasionally experiments with
@@ -224,6 +229,8 @@ const imageGridImages =[
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
                 About the Artist
               </Heading>
+
+              <Stack direction={['column','row']}>
               <Box pb={{base: 20,lg:12}}>
                 <Text fontSize={'lg'}
                   fontFamily={'Space Mono'}
@@ -249,13 +256,16 @@ const imageGridImages =[
                 Trust Arts award for 2022.               
                 </Text>
               </Box>
+
+              <Box>
+                <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293979/Emma_flip_frame_.pdf_ddqmiq.png'} alt="work by kharumwa"  height={2000} width={1414} placeholder="blur" blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716293979/Emma_flip_frame_.pdf_ddqmiq.png'} />
+              </Box>
+              </Stack>
+
               
               </VStack>
 
-              {/* Photo Gallery */}
-              {/* <Box pb={{lg: 12}}>
-                <ImageGridReactPhotoGallery />
-              </Box> */}
+ 
 
               {/* <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>
                   <Box>

@@ -29,38 +29,124 @@ import Head from 'next/head'
 const imageGridImages =[
   {   
       src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+      original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
       width: 720,
       height: 1280,
-      caption: "After Rain (Jeshu John - designerspics.com)",
+      caption: "Gallery Space1",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699562475/Untitled2_aesw2a.jpg",
+      original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699562475/Untitled2_aesw2a.jpg",
+      width: 1131,
+      height: 1600,
+      caption: "Gallery Space2",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699562476/Untitled_uegrxu.jpg",
+      original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699562476/Untitled_uegrxu.jpg",
+      width: 1200,
+      height: 1600,
+      caption: "Gallery Space4",
   },
   {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
-  },
-  {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
-    width: 720,
-    height: 1280,
-    caption: "After Rain (Jeshu John - designerspics.com)",
-  },
-      
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956916/DKR_LOMAN_RESIDENCY_260_edx0ln.jpg",
+    original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956916/DKR_LOMAN_RESIDENCY_260_edx0ln.jpg",
+    width: 6000,
+    height: 4000,
+    caption: "Gallery Space4",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956915/DKR_LOMAN_RESIDENCY_234_trfxro.jpg",
+  original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956915/DKR_LOMAN_RESIDENCY_234_trfxro.jpg",
+  width: 6000,
+  height: 4000,
+  caption: "Gallery Space4",
+},
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956908/DKR_LOMAN_RESIDENCY_261_qzqpps.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956908/DKR_LOMAN_RESIDENCY_261_qzqpps.jpg",
+width: 6000,
+height: 4000,
+caption: "Gallery Space4",
+},
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2223_dt22ni.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2223_dt22ni.jpg",
+width: 4032,
+height: 3024,
+caption: "Gallery Space4",
+},
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956906/DKR_LOMAN_RESIDENCY_271_pvksd7.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956906/DKR_LOMAN_RESIDENCY_271_pvksd7.jpg",
+width: 6000,
+height: 4000,
+caption: "Gallery Space4",
+},
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956697/IMG_2241_arzcyt.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956697/IMG_2241_arzcyt.jpg",
+width: 4032,
+height: 3024,
+caption: "Gallery Space4",
+},
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2217_jzmbtf.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956678/IMG_2217_jzmbtf.jpg",
+width: 3024,
+height: 4032,
+caption: "Gallery Space4",
+},
+
+{   
+src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956907/DKR_LOMAN_RESIDENCY_816_flwscb.jpg",
+original: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699956907/DKR_LOMAN_RESIDENCY_816_flwscb.jpg",
+width: 6000,
+height: 4000,
+caption: "Gallery Space4",
+},
 
 
 ] 
+
+
+
+
+// const imageGridImages =[
+//   {   
+//       src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+//       width: 720,
+//       height: 1280,
+//       caption: "After Rain (Jeshu John - designerspics.com)",
+//   },
+//   {   
+//     src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+//     width: 720,
+//     height: 1280,
+//     caption: "After Rain (Jeshu John - designerspics.com)",
+//   },
+//   {   
+//     src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+//     width: 720,
+//     height: 1280,
+//     caption: "After Rain (Jeshu John - designerspics.com)",
+//   },
+//   {   
+//     src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+//     width: 720,
+//     height: 1280,
+//     caption: "After Rain (Jeshu John - designerspics.com)",
+//   },
+//   {   
+//     src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699558990/Untitled3_fwfagn.jpg",
+//     width: 720,
+//     height: 1280,
+//     caption: "After Rain (Jeshu John - designerspics.com)",
+//   },
+      
+
+
+// ] 
 
 
   export default function OdurMuwawaExhibitionPage() {
@@ -151,7 +237,7 @@ const imageGridImages =[
 
               {/* Photo Gallery */}
               <Box pb={{lg: 12}}>
-                <ImageGridReactPhotoGallery />
+                <ImageGridReactPhotoGallery imageGridImages={imageGridImages}  />
               </Box>
 
               <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>
