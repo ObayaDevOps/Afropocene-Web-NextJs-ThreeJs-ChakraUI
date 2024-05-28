@@ -72,7 +72,7 @@ import {
           justify={'center'}
           px={useBreakpointValue({ base: 6, md: 8 })}
         //   bgGradient={'linear(to-r, blackAlpha.900, transparent)'}
-        mt={{base:-24}}
+        // mt={{base:-24}}
           >
           <Stack maxW={'2xl'} align={'center'} spacing={6}>
 
