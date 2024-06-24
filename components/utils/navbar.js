@@ -325,8 +325,13 @@ import theme from './theme';
           href: '/capsule-gallery/about-capsule',
         },
         {
-          label: 'Emma Prempeh - A Constant Yearning',
+          label: 'Henry Robinson - Lela Pit',
           subLabel: 'Currently Showing',
+          href: '/capsule-gallery/lela-pit-henry-robinson',
+        },
+        {
+          label: 'Emma Prempeh - A Constant Yearning',
+          subLabel: 'Previous Showing',
           href: '/capsule-gallery/prempeh-constant-yearning-capsule',
         },
         {
