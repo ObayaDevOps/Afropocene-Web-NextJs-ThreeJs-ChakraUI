@@ -30,18 +30,44 @@ import republicPoster2 from '../../public/images/exhibitions/prempeh-a-constant-
 import Head from 'next/head'
 
 const imageGridImages =[
-  {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.28_w5cj3y.jpg",
-      width: 1080,
-      height: 608,
-      caption: "Henry Robinson Lela Pit",
-  },
-  {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.28_1_ky6jlr.jpg",
-    width: 1080,
-    height: 608,
-    caption: "Henry Robinson Lela Pit",
+
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236519/WhatsApp_Image_2024-06-24_at_16.37.47_spjob2.jpg",
+        width: 1527,
+        height: 1080,
+        caption: "Henry Robinson Lela Pit",
     },
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_3_h2dfyi.jpg",
+        width: 1527,
+        height: 1080,
+        caption: "Henry Robinson Lela Pit",
+    },
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_1_iydamo.jpg",
+        width: 1527,
+        height: 1080,
+        caption: "Henry Robinson Lela Pit",
+    },
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236509/WhatsApp_Image_2024-06-24_at_16.37.48_oepx0a.jpg",
+        width: 854,
+        height: 1280,
+        caption: "Henry Robinson Lela Pit",
+    },
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.49_2_hap7cd.jpg",
+        width: 1280,
+        height: 1024,
+        caption: "Henry Robinson Lela Pit",
+    },
+    {   
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236510/WhatsApp_Image_2024-06-24_at_16.37.49_pdadpr.jpg",
+        width: 1024,
+        height: 1280,
+        caption: "Henry Robinson Lela Pit",
+    },
+
   {   
     src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.27_f1iavz.jpg",
     width: 1080,
