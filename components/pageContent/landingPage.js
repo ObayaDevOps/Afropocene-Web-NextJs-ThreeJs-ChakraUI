@@ -51,7 +51,10 @@ export default function LandingPage(props) {
         status: "info",
         position: "bottom",
         duration: 12000,
-        isClosable: true
+        isClosable: true,
+        containerStyle: {
+          fontFamily: 'Space Mono'
+        }
       });
 
   }, []); // Passing in empty array so this will only get called on mount
