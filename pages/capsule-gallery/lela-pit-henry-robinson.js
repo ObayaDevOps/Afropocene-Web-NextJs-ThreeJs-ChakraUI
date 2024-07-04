@@ -18,6 +18,7 @@ import {
 import { MdLocalShipping } from 'react-icons/md'
 
 
+import ImageGridPhotoGallery from '../../components/image-grid-Lightbox/imageGridPhotoGallery'
 
 import ImageGridReactPhotoGallery from '../../components/image-grid-Lightbox/imageGridReactPhotoGallery'
 
@@ -74,12 +75,12 @@ const imageGridImages =[
     height: 608,
     caption: "Henry Robinson Lela Pit",
     },
-  {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.29_hbpm28.jpg",
-    width: 1080,
-    height: 608,
-    caption: "Henry Robinson Lela Pit",
-    },
+  // {   
+  //   src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.29_hbpm28.jpg",
+  //   width: 1080,
+  //   height: 608,
+  //   caption: "Henry Robinson Lela Pit",
+  //   },
 
 ] 
 
@@ -174,8 +175,12 @@ const imageGridImages =[
 
               {/* Photo Gallery */}
               <Box py={{base: 10, lg: 12}}>
-                <ImageGridReactPhotoGallery imageGridImages={imageGridImages} />
+                <ImageGridPhotoGallery photos={imageGridImages} />
               </Box>
+
+              {/* <Box py={{base: 10, lg: 12}}>
+                <ImageGridReactPhotoGallery imageGridImages={imageGridImages} />
+              </Box> */}
 
                 <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
                 In the first series, Henry captures the women in transit, 
