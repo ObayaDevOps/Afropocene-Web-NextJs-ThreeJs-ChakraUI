@@ -12,6 +12,8 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
+// https://yet-another-react-lightbox.com/
+ // https://react-photo-album.com/
 
 export default function ImageGridPhotoGallery(props) {
   const [index, setIndex] = useState(-1);
