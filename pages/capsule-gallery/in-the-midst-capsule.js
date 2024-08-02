@@ -15,17 +15,8 @@ import {
     List,
     ListItem,
   } from '@chakra-ui/react';
-import { MdLocalShipping } from 'react-icons/md'
-
-
-import ImageGridPhotoGallery from '../../components/image-grid-Lightbox/imageGridPhotoGallery'
-
-import ImageGridReactPhotoGallery from '../../components/image-grid-Lightbox/imageGridReactPhotoGallery'
 
 import NextImage from 'next/image'
-import republicPoster from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
-import republicPoster2 from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
-
 
 
 import Head from 'next/head'
@@ -85,7 +76,7 @@ const imageGridImages =[
 ] 
 
 
-  export default function RobinsonLelaPitCapsuleExhibitionPage() {
+  export default function InTheMidstCapsuleExhibitionPage() {
     return (
       <Container maxW={'7xl'}>
       <Head>
