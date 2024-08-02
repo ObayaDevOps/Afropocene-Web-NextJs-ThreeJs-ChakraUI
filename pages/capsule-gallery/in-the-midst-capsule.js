@@ -116,7 +116,7 @@ const imageGridImages =[
               <Box>
                 <NextImage 
                     src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1722593778/WhatsApp_Image_2024-08-02_at_09.22.44_qfehnz.jpg'} 
-                    alt="Henry Robinson Lela Pit Capsule" width={1440} height={1800}  
+                    alt="In the Midst Capsule" width={1440} height={1800}  
                     placeholder="blur" 
                     blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1722593778/WhatsApp_Image_2024-08-02_at_09.22.44_qfehnz.jpg'} />
               </Box>

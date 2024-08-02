@@ -325,8 +325,13 @@ import theme from './theme';
           href: '/capsule-gallery/about-capsule',
         },
         {
-          label: 'Henry Robinson - Lela Pit',
+          label: 'Kobusinge & Komukama - In the Midst',
           subLabel: 'Currently Showing',
+          href: '/capsule-gallery/in-the-midst-capsule',
+        },
+        {
+          label: 'Henry Robinson - Lela Pit',
+          subLabel: 'Previous Showing',
           href: '/capsule-gallery/lela-pit-henry-robinson',
         },
         {
