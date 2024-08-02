@@ -145,14 +145,14 @@ import Link from 'next/link'
                 <Text fontSize={'xs'} textAlign="left" paddingTop="1em">
                     Slide Photo Credit: https://klaart.org/showcase-item/trevor-aloka-2/
                 </Text> */}
-                <Text fontSize={'xl'}>
+                {/* <Text fontSize={'xl'}>
                 Minting allows the owner to set the ASCII characters of the Torus to whatever they please. But only once. The work is forever free for all to view through the Afropocene website. 
-                </Text>
+                </Text> */}
               </Box>
             </Stack>  
 
-            <Link href="/tech/web3-login" passHref>      
-            <Button
+            {/* <Link href="/tech/web3-login" passHref>       */}
+            {/* <Button
             
               rounded={'none'}
               w={'full'}
@@ -167,8 +167,8 @@ import Link from 'next/link'
                 boxShadow: 'lg',
               }}>
               Mint 1 of 1
-            </Button>
-            </Link>  
+            </Button> */}
+            {/* </Link>   */}
   
             {/* <Stack direction="row" alignItems="center" justifyContent={'center'}>
               <MdLocalShipping />
