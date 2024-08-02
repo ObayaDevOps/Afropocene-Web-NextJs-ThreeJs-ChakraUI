@@ -45,7 +45,7 @@ export default function LandingPage(props) {
   useEffect(() => {
     // Show toast every 5 seconds.
       toast({
-        title: "Now On at The Capsule: Henry Robinson - Lela Pit",
+        title: "Now On at The Capsule: Kobusinge & Komukama - In the Midst",
         id,
         // description: `Time ${new Date()}`,
         status: "info",
