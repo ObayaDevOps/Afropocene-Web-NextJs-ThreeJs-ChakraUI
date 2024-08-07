@@ -75,7 +75,8 @@ export default function LandingPage(props) {
     >
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" 
         // backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}
-        backgroundImage={{base: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_1_iydamo.jpg', lg:'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_1_iydamo.jpg' }}
+        backgroundImage={{base: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg',
+         lg:'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg' }}
 
         
         >
