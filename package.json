@@ -44,7 +44,9 @@
     "sanity": "^3.9.0",
     "styled-components": "^5.3.9",
     "three": "^0.139.2",
-    "wagmi": "^0.12.1"
+    "wagmi": "^0.12.1",
+    "yet-another-react-lightbox": "^3.21.0"
+
   },
   "devDependencies": {
     "eslint": "8.13.0",
