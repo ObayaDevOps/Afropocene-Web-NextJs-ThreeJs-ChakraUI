@@ -183,7 +183,7 @@ import theme from './theme';
               {label}
             </Text>
 
-            <Text fontSize={'sm'}>{subLabel}</Text>
+            <Text fontSize={'sm'} fontFamily={'Space Mono'}>{subLabel}</Text>
           </Box>
           <Flex
             transition={'all .3s ease'}

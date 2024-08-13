@@ -21,6 +21,9 @@ import { MdLocalShipping } from 'react-icons/md'
 
 import ImageGridReactPhotoGallery from '../../components/image-grid-Lightbox/imageGridReactPhotoGallery'
 
+import ImageGridPhotoGallery from '../../components/image-grid-Lightbox/imageGridPhotoGallery'
+
+
 import NextImage from 'next/image'
 import republicPoster from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
 import republicPoster2 from '../../public/images/exhibitions/prempeh-a-constant-yearning/Emma_flip_frame.png'
@@ -111,12 +114,6 @@ const imageGridImages =[
             <Stack
               spacing={{ base: 4, sm: 6, lg: 20 }}
               direction={'column'}
-              // divider={
-              //   <StackDivider
-              //     borderColor={useColorModeValue('gray.200', 'gray.600')}
-              //   />
-              // }
-              
               >
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
@@ -166,7 +163,7 @@ const imageGridImages =[
 
               {/* Photo Gallery */}
               <Box py={{base: 10, lg: 12}}>
-                <ImageGridReactPhotoGallery imageGridImages={imageGridImages} />
+                <ImageGridPhotoGallery photos={imageGridImages} />
               </Box>
 
                 <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >

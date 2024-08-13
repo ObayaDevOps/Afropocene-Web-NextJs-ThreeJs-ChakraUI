@@ -158,6 +158,7 @@ import groq from 'groq'
                 // flex={1}
                 onClick={socialMediaUrl}
                 size={'xs'}
+                fontFamily={'Space Mono'}
                 fontSize={'md'}
                 rounded={'none'}
                 bg={'blue.400'}

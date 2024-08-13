@@ -17,6 +17,7 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 
+import ImageGridPhotoGallery from '../../components/image-grid-Lightbox/imageGridPhotoGallery'
 
 
 import ImageGridReactPhotoGallery from '../../components/image-grid-Lightbox/imageGridReactPhotoGallery'
@@ -164,8 +165,7 @@ caption: "Gallery Space4",
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24, lg:0 }}>
           <Flex>
-            {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
-            {/* <ImageSlider slides={SlideData} /> */}
+
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <HStack>
@@ -193,13 +193,7 @@ caption: "Gallery Space4",
   
             <Stack
               spacing={{ base: 4, sm: 6, lg: 20 }}
-              direction={'column'}
-              // divider={
-              //   <StackDivider
-              //     borderColor={useColorModeValue('gray.200', 'gray.600')}
-              //   />
-              // }
-              
+              direction={'column'}              
               >
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
@@ -236,8 +230,8 @@ caption: "Gallery Space4",
               </VStack>
 
               {/* Photo Gallery */}
-              <Box pb={{lg: 12}}>
-                <ImageGridReactPhotoGallery imageGridImages={imageGridImages}  />
+              <Box py={{base: 10, lg: 12}}>
+                <ImageGridPhotoGallery photos={imageGridImages} />
               </Box>
 
               <SimpleGrid columns={{base: 1,md:2}} spacing={10} pt={20}>

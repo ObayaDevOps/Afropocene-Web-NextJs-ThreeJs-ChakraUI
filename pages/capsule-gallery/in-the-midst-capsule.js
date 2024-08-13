@@ -20,58 +20,18 @@ import NextImage from 'next/image'
 
 
 import Head from 'next/head'
+import ImageGridPhotoGallery from '../../components/image-grid-Lightbox/imageGridPhotoGallery'
+
+
 
 const imageGridImages =[
 
     {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236519/WhatsApp_Image_2024-06-24_at_16.37.47_spjob2.jpg",
-        width: 1527,
-        height: 1080,
-        caption: "Henry Robinson Lela Pit",
+        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg",
+        width: 6240,
+        height: 4160,
+        caption: "Kobusinge & Komukama: In the Midst Exhibition",
     },
-    {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_3_h2dfyi.jpg",
-        width: 1527,
-        height: 1080,
-        caption: "Henry Robinson Lela Pit",
-    },
-    {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_1_iydamo.jpg",
-        width: 1527,
-        height: 1080,
-        caption: "Henry Robinson Lela Pit",
-    },
-    {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236509/WhatsApp_Image_2024-06-24_at_16.37.48_oepx0a.jpg",
-        width: 854,
-        height: 1280,
-        caption: "Henry Robinson Lela Pit",
-    },
-    {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.49_2_hap7cd.jpg",
-        width: 1280,
-        height: 1024,
-        caption: "Henry Robinson Lela Pit",
-    },
-    {   
-        src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236510/WhatsApp_Image_2024-06-24_at_16.37.49_pdadpr.jpg",
-        width: 1024,
-        height: 1280,
-        caption: "Henry Robinson Lela Pit",
-    },
-
-  {   
-    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.27_f1iavz.jpg",
-    width: 1080,
-    height: 608,
-    caption: "Henry Robinson Lela Pit",
-    },
-  // {   
-  //   src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.29_hbpm28.jpg",
-  //   width: 1080,
-  //   height: 608,
-  //   caption: "Henry Robinson Lela Pit",
-  //   },
 
 ] 
 
@@ -91,8 +51,7 @@ const imageGridImages =[
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24, lg:0 }}>
           <Flex>
-            {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
-            {/* <ImageSlider slides={SlideData} /> */}
+
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <HStack>
@@ -125,12 +84,6 @@ const imageGridImages =[
             <Stack
               spacing={{ base: 4, sm: 6, lg: 20 }}
               direction={'column'}
-              // divider={
-              //   <StackDivider
-              //     borderColor={useColorModeValue('gray.200', 'gray.600')}
-              //   />
-              // }
-              
               >
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
@@ -150,45 +103,50 @@ const imageGridImages =[
                 <Text fontSize={'lg'}
                   fontFamily={'Space Mono'}
                 >
-                In the midst is the first in a series of meditations on movement curated by E Mirembe and Rosie Olang.  
+                A Moving Image Exhibition: In the midst is the first in a series of meditations on movement curated by E Mirembe and Rosie Olang.  
                 </Text>
-                <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
-                “We started out wanting to print sound and made literal representations of the Black Circles that always lift us and hold us in community. As part of the experiment, we laid some prepared brass plates on the floor of our residency apartment and had friends dance on them, making impressions that we printed onto the bark cloth and lint paper we made in the studio” - Darlyne Komukama and Liz Kobusinge. 
-               
-                </Text>
+
 
               {/* Photo Gallery */}
-              {/* <Box py={{base: 10, lg: 12}}>
+              <Box py={{base: 10, lg: 12}}>
                 <ImageGridPhotoGallery photos={imageGridImages} />
-              </Box> */}
+              </Box>
 
-              {/* <Box py={{base: 10, lg: 12}}>
-                <ImageGridReactPhotoGallery imageGridImages={imageGridImages} />
-              </Box> */}
 
-                {/* <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
-                In the first series, Henry captures the women in transit, 
-                practising a quick frame method that allows him to pose the women as they are. 
-                The focus is placed on them in such a way that the relationship between the woman and her bike is highlighted, 
-                while remaining embedded in the environment. In these images, the women are centred and given full attention;
-                 unlike ethnographic images, where people can be presented almost as extensions of the land to be conquered.
-
+                <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
                
+                  We started out wanting to print sound and made literal representations of the Black Circles that always hold us and lift us in community.
+                   As part of our experiment, we laid some prepared brass plates on the floor of our residency apartment and had friends dance on them, 
+                   making impressions that we printed onto the bark cloth and lint paper we made in the studio. 
+                   These pieces are the results of our playing around with placement and echo on the drum of the printer.                
                 </Text>
 
                 <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
-                In the second series, Henry places even more emphasis on the women by bringing his Wandering Studio practice to Gulu. 
-                He builds a backdrop to take studio shots in the tradition of African photographers such as James Barnor and Seydou Keita, 
-                who used studio photography to canonise everyday life on the continent. With this approach, 
-                Henry pushes his practice further, experimenting with more daring poses that enhance the relationship between the woman
-                 and her bike. Here, the bike becomes almost an appendage of the woman,
-                  showcasing her control over the tool and the way she wields its power to carry out her wishes.
+                Our explorations centred on remembrance, and curiosity as a driving force to build on practices that rely on 
+                  alternative processes and materials, intending to share and expand our interest in sustainable practices as 
+                  rituals of memory keeping. This process-based materials study explores how we create and document soundscapes, 
+                  as an access point into a shared inheritance that is preserved through body memory. Using an antidisciplinary 
+                  approach to situate our knowledge of bark cloth and sound production as core functions of memory work, we are 
+                  curious about the experimental processes of textured, and sonic art-making, that perform as a conduit to an 
+                  organic archive.
+                </Text>
 
-                </Text> */}
+                <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
+                This work is a testament to collective making; we were gently and lovingly held by a community of artists who
+                   made us feel present and welcomed in this space as we documented how our bodies responded to this particular 
+                   space and time and relayed body memory onto fragile handmade materials. Making this work was an opportunity 
+                   for us to participate in art-making in service of the ideals of collective intimacy and healing.
+                </Text>
+
+                <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
+                All works printed at Edition Verso during a collaborative residency by Liz Kobusinge and Darlyne Komukama, 
+                  supported by LAPA Brixton.
+                </Text>
 
               </Box>
 
-{/* 
+
+
               <Heading
                 pt={20}
                 lineHeight={1.1}
@@ -198,32 +156,78 @@ const imageGridImages =[
               </Heading>
 
               <Stack direction={['column-reverse','row']}>
-              <Box pb={{base: 20,lg:12}}>
-                <Text fontSize={'lg'}
-                  fontFamily={'Space Mono'}
+                <Box pb={{base: 20,lg:12}} >
+                  <Text fontSize={'lg'}
+                    fontFamily={'Space Mono'}
+                    maxW={{md:'8xl'}}
+                  >
+                    Kobusinge is a community-taught artist who makes as a
+                    ritual of remembrance, layering handmade paper,
+                    dyes, ink and video to mimic how our skin holds and
+                    disperses memory. Her current research is on the textured
+                    possibilities of eco-printing and painting methods on hand-made
+                    bark cloth, positioning memory as material. As part of the
+                    2023/2024 cohort of the Njabala Foundation, Kobusinge contributed
+                    to Pillars of Rectitude, a research project that foregrounds East African
+                    women artists whose work has undergone systematic erasure. Her
+                    work has been exhibited with the Njabala Foundation for their annual
+                    exhibition at the Makerere University Art Gallery, as part of KLA ART
+                    2021 in Kampala, with the Salooni Collective at Institut National de
+                    Formation Artistique et Culturelle in Burkina Faso and the N&apos;GOLA
+                    Biennial of Arts and Culture in São Tomé e Príncipe,  with 32
+                    Degrees East for their members&apos; exhibition, with Gloria
+                    Kiconco at the German Cultural Institute in Kampala, and as part of FitClique Africa&apos;s Feminist Utopia installations in Kampala and Nairobi.
+                                        
+                  </Text>
+                </Box>
 
-                >
-                  Henry Robinson is a Uganda-based visual artist born and bred in Jamaica. 
-                  He has worked in film and photography in the Caribbean and the United Kingdom. 
-                  He uses portrait photography to explore what intrigues him about his subjects, 
-                  answering questions about them with each shot. In addition to working with numerous commercial clients 
-                  such as Puma and Google, his work has been featured in Plantain magazine and exhibited at King&apos;s College 
-                  in London. 
-                  
-                </Text>
-                <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
-                    This work builds on his residency at Afropocene StudioLab in September 2022, 
-                    during which he spent part of his time in Northern Uganda.               
-                </Text>
-              </Box>
+                <Box p={{base: 2, md: 4}}>
+                  <NextImage 
+                  src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723548730/liz_qxpf7a.jpg'}
+                  alt="Liz Kobusinge Afropocene"  height={719} width={1080} placeholder="blur"
+                    blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723548730/liz_qxpf7a.jpg'} />
+                </Box>
+              </Stack>
 
-              <Box p={{base: 2, md: 4}}>
-                <NextImage 
-                src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719233962/henrypfp.png'}
-                 alt="Henry Robinson Afropocene"  height={1457} width={1203} placeholder="blur"
-                  blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719233962/henrypfp.png'} />
-              </Box>
-              </Stack> */}
+              <Stack direction={['column-reverse','row']}>
+                <Box pb={{base: 20,lg:12}}>
+                  <Text fontSize={'lg'}
+                    fontFamily={'Space Mono'}
+                    maxW={{md:'8xl'}}
+
+                  >
+                    
+                    Darlyne is a Ugandan self-taught photographer and multi-media artist who works mostly collaboratively to 
+                    investigate and edify the things she cares about; femininity, blackness and connectedness. 
+                    Her feminist ideals are vital to her projects and she will be found working with other women to make some
+                     cool shit for even more women to enjoy. 
+                    
+                    Her photographs are full of regal, statuesque Black women, colour and a call back to the natural world.
+                    Her visual art projects include; The Salooni, a multi-media roving installation made together with three Ugandan women,
+                     investigating and celebrating Black hair, Our Things, a video archive installation made with one other Ugandan woman 
+                     collecting stories about similar Ugandan experiences, and, Penthouse, a rage room on a rooftop in the middle of downtown
+                      Kampala where Kampalan women could safely express and manifest their rage for Kla Art 2018.
+
+                                            Her projects, Decay and Cardi Monáe, serve as sonic explorations. As a DJ (Decay), she is interested in feeling and 
+                                            sharing the joy of the power of the femme. Whether she&apos;s playing trap, dancehall, ballroom or the stankiest twerking music, it&apos;s in service to freedom for the femme body and spirit. 
+                                            With Cardi Monáe, as a producer, she is interested in translating her artistic pursuits, which include photography, 
+                                            videography and installation art, as well as her influences into music. Her music will soon be released on the 
+                                            Hakuna Kulala label.
+                    Her work has appeared on CNN, BBC, The Guardian, Quartz and OkayAfrica. Her work has also been shown at the Southbank Centre in 
+                    London as part of the Africa Utopia Festival, Constitution Hill in Johannesburg as part of the Being Her(e) Exhibition, the Chale Wote Festival in Jamestown in Accra, the Africa Bass Cultural festival in Ouagadougou and at multiple locations in Kampala, Uganda.                   
+                  </Text>
+                  {/* <Text fontSize={'lg'} pt={{base:10, lg: 6}} fontFamily={'Space Mono'}  >
+          
+                  </Text> */}
+                </Box>
+
+                <Box p={{base: 2, md: 4}}>
+                  <NextImage 
+                  src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723548672/darlyne_ngjhut.jpg'}
+                  alt="Darlyne Komukama Afropocene"  height={1000} width={750} placeholder="blur"
+                    blurDataURL={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723548672/darlyne_ngjhut.jpg'} />
+                </Box>
+              </Stack>
 
               
               </VStack>
