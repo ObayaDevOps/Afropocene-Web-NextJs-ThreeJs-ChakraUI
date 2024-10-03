@@ -226,7 +226,7 @@ const imageGridImages =[
 
 
               <Heading
-                pt={20}
+                pt={{ base: 10, md: 20 }}
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
