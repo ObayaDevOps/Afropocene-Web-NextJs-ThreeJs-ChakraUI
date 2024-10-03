@@ -14,6 +14,7 @@ import {
     useColorModeValue,
     List,
     ListItem,
+    AspectRatio,
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 
@@ -217,7 +218,29 @@ const imageGridImages =[
 
                 </Text>
               </Box>
+              
 
+              <Box>
+              
+              </Box>
+
+
+              <Heading
+                pt={20}
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+                Exhibition Video
+              </Heading>
+              
+              <AspectRatio ratio={16 / 9} width="100%">
+                <iframe
+                  src="https://www.youtube.com/embed/IuIVPV1gdOE"
+                  title="Emma Prempeh: A Constant Yearning"
+                  allowFullScreen
+                />
+              </AspectRatio>
+              
 
               <Heading
                 pt={20}
