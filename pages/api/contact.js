@@ -25,8 +25,6 @@ const data={ from: Email,
         if(err){
             console.log(err)
             console.log("DID NOT SEND !")
-            console.log("UN: " + process.env.SMTP_USER)
-            console.log("UN: " + process.env.SMTP_PASSWORD)
 
 
         }
