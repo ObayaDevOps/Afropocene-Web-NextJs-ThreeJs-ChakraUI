@@ -121,7 +121,7 @@ const ArticleList = ({pressCardPage}) => {
 
 
 //I wanr the query to return all the info
-const query = groq`*[_type == "pressCardPage"] | order(_createdAt asc) {
+const query = groq`*[_type == "pressCardPage"] | order(_createdAt desc) {
   articleName,
   articleTag,
   "articlePFP": articlePFP.asset->url,
