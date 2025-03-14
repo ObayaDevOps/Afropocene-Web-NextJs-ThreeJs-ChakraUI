@@ -31,17 +31,16 @@
     "photoswipe": "^5.4.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^5.5.0",
     "react-images": "^1.2.0-beta.7",
-    "react-photo-gallery": "^8.0.0",
     "react-photo-album": "^2.4.1",
+    "react-photo-gallery": "^8.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-typewriter-effect": "^1.1.0",
     "sanity": "^3.9.0",
     "styled-components": "^5.3.9",
     "three": "^0.139.2",
     "yet-another-react-lightbox": "^3.21.0"
-
   },
   "devDependencies": {
     "eslint": "8.13.0",

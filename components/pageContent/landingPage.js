@@ -45,7 +45,7 @@ export default function LandingPage(props) {
   useEffect(() => {
     // Show toast every 5 seconds.
       toast({
-        title: "Currently at The Capsule: Kobusinge & Komukama - In the Midst",
+        title: "Currently at The Capsule: Obulo Bwaffe Festival",
         id,
         // description: `Time ${new Date()}`,
         status: "info",
@@ -74,9 +74,9 @@ export default function LandingPage(props) {
     spacing={{ base: 8, md: 10 }}
     >
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" 
-        // backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}
-        backgroundImage={{base: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg',
-         lg:'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg' }}
+        backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}
+        // backgroundImage={{base: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg',
+        //  lg:'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg' }}
 
         
         >
