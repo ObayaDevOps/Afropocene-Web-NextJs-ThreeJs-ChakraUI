@@ -10,6 +10,7 @@ import {
     Input,
     IconButton,
     useColorModeValue,
+    Button,
   } from '@chakra-ui/react';
   import { FaInstagram } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
@@ -94,7 +95,7 @@ import {
               </Link>
             </Stack>
 
-              <Stack direction={'row'} spacing={6}>
+              <Stack direction={'row'} spacing={6} align="center">
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
                   <FaInstagram />
                 </SocialButton>
@@ -104,15 +105,20 @@ import {
                 <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
                   <IoMdPlanet />
                 </SocialButton>
-                <Link href="https://www.buymeacoffee.com/afropocene">
-                  <Image 
-                  src={coffee}
-                  width={1090/9}
-                  height={306/9}
-                  alt="Buy Us a Coffee !"
-                  
-                  />
-                </Link>
+                <Button 
+                  as="a"
+                  href="https://store.pesapal.com/capsulegallery"
+                  fontFamily="Space Mono"
+                  bg={useColorModeValue('black', 'white')}
+                  color={useColorModeValue('white', 'black')}
+                  _hover={{
+                    bg: useColorModeValue('gray.700', 'gray.300'),
+                  }}
+                  size="sm"
+                  borderRadius="md"
+                >
+                  Donate
+                </Button>
               </Stack>
             </Stack>
 
