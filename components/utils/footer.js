@@ -107,7 +107,7 @@ import {
                 </SocialButton>
                 <Button 
                   as="a"
-                  href="https://store.pesapal.com/capsulegallery"
+                  href="https://store.pesapal.com/afropocene"
                   fontFamily="Space Mono"
                   bg={useColorModeValue('black', 'white')}
                   color={useColorModeValue('white', 'black')}
