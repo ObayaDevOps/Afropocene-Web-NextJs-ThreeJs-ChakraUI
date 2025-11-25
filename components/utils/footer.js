@@ -10,7 +10,6 @@ import {
     Input,
     IconButton,
     useColorModeValue,
-    Button,
   } from '@chakra-ui/react';
   import { FaInstagram } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
@@ -76,13 +75,13 @@ import {
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
-                © 2024 Afropocene StudioLab.
+                © 2025 Afropocene StudioLab.
                 Designed and Built in Kampala by&nbsp;               
                 <NextLink href="https://www.dralegawebops.com/">
                       DralegaWebOps
                 </NextLink>  
               </Text>
-              <Stack align={'flex-start'}>
+              {/* <Stack align={'flex-start'}>
               <Link href={'/studio'}>
                 <Text fontSize={'sm'} fontFamily={'Space Mono'}>
                   Editor Studio
@@ -93,7 +92,7 @@ import {
                   Admin Panel
                 </Text>
               </Link>
-            </Stack>
+            </Stack> */}
 
               <Stack direction={'row'} spacing={6} align="center">
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
@@ -105,20 +104,6 @@ import {
                 <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
                   <IoMdPlanet />
                 </SocialButton>
-                <Button 
-                  as="a"
-                  href="https://store.pesapal.com/afropocene"
-                  fontFamily="Space Mono"
-                  bg={useColorModeValue('black', 'white')}
-                  color={useColorModeValue('white', 'black')}
-                  _hover={{
-                    bg: useColorModeValue('gray.700', 'gray.300'),
-                  }}
-                  size="sm"
-                  borderRadius="md"
-                >
-                  Donate
-                </Button>
               </Stack>
             </Stack>
 

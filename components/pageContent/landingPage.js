@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import LandingPageSplitWithImage from '../landingPageSections/feature'
 import acunye from '../../public/images/visting-artists/acunye/Afropocene-Studio-BTS60.jpg'
+import SilkHero from '../landingPageSections/silkHero'
 
 
 const DynamicTypeWriterWithNoSSR = dynamic(
@@ -11,28 +12,46 @@ const DynamicTypeWriterWithNoSSR = dynamic(
     { ssr: false }
   )
 
-  function ToastExample() {
-    const toast = useToast()
-    return (
-      <Button
-        onClick={() =>
-          toast({
-            title: 'Account created.',
-            description: "We've created your account for you.",
-            status: 'success',
-            duration: 9000,
-            isClosable: true,
-          })
-        }
-      >
-        Show Toast
-      </Button>
-    )
-  }
 
 
 export default function LandingPage(props) {
-  const landingPageContent  = props.pageContent[0] || [];
+  const landingPageContent  = props.pageContent[0] || {};
+
+console.log('landingPageContent:', landingPageContent)
+
+  const heroBackground = landingPageContent.backgroundImageUrl || '../../../images/backgrounds/MandelbrotLargeDark.jpg';
+  const heroBackgroundImage = `url(${heroBackground})`;
+  const typewriterTexts = [
+    landingPageContent.scrollingText1,
+    landingPageContent.scrollingText2,
+    landingPageContent.scrollingText3,
+    landingPageContent.scrollingText4,
+  ].filter(Boolean);
+  const featureSections = [
+    {
+      title: landingPageContent.whatWeDoTitle1,
+      description: landingPageContent.whatWeDoContentParagraph1,
+      imageUrl: landingPageContent.whatWeDoImage1Url,
+      buttonText: landingPageContent.whatWeDoButtonText1,
+      href: '../../../about/about-us',
+    },
+    {
+      title: landingPageContent.whatWeDoTitle2,
+      description: landingPageContent.whatWeDoContentParagraph2,
+      imageUrl: landingPageContent.whatWeDoImage2Url,
+      buttonText: landingPageContent.whatWeDoButtonText2,
+      href: '../../../studios/kabalagala-studio',
+    },
+    {
+      title: landingPageContent.whatWeDoTitle3,
+      description: landingPageContent.whatWeDoContentParagraph3,
+      imageUrl: landingPageContent.whatWeDoImage3Url,
+      buttonText: landingPageContent.whatWeDoButtonText3,
+      href: '../../../tech/this',
+    },
+  ]
+  // Ensure empty schema items don't render blank blocks
+  .filter(section => section.title || section.description || section.imageUrl);
 
 
 
@@ -40,24 +59,22 @@ export default function LandingPage(props) {
   // /https://stackoverflow.com/questions/58314040/how-can-i-show-a-chakra-ui-toast-programmatically
   const toast = useToast();
   const id = 'test-toast'
+  const showLandingToast = false; // toggle to false to disable
 
 
   useEffect(() => {
-    // Show toast every 5 seconds.
-      toast({
-        title: "Currently at The Capsule: Obulo Bwaffe Festival",
-        id,
-        // description: `Time ${new Date()}`,
-        status: "info",
-        position: "bottom",
-        duration: 12000,
-        isClosable: true,
-        containerStyle: {
-          fontFamily: 'Space Mono'
-        }
-      });
+    if (!showLandingToast) return;
 
-  }, []); // Passing in empty array so this will only get called on mount
+    toast({
+      title: "Currently at The Capsule: Obulo Bwaffe Festival",
+      id,
+      status: "info",
+      position: "bottom",
+      duration: 12000,
+      isClosable: true,
+      containerStyle: { fontFamily: 'Space Mono' }
+    });
+  }, []);
   
   
   return (
@@ -69,14 +86,18 @@ export default function LandingPage(props) {
       </Alert> */}
       {/* <CustomToastExample /> */}
 
+      {/* Animated Silk hero */}
+      {/* <Box px={{ base: 4, md: 8 }} py={{ base: 4, md: 8 }}>
+        <SilkHero headline={landingPageContent.headingTop} />
+      </Box> */}
+
     <SimpleGrid
     columns={1}
     spacing={{ base: 8, md: 10 }}
     >
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" 
-        backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}
-        // backgroundImage={{base: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg',
-        //  lg:'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723032636/IMG_1311-43_ipofvy.jpg' }}
+        backgroundImage={{base: heroBackgroundImage, lg: heroBackgroundImage }}
+        
 
         
         >
@@ -95,7 +116,7 @@ export default function LandingPage(props) {
 
             {/* Scrolling Text */}
             <Container maxW='md' centerContent     zIndex={1}>
-                <DynamicTypeWriterWithNoSSR/>
+                <DynamicTypeWriterWithNoSSR multiText={typewriterTexts}/>
             </Container>
 
         </Box>
@@ -115,7 +136,7 @@ export default function LandingPage(props) {
           </Heading>
       </Center>
 
-        <LandingPageSplitWithImage />
+        <LandingPageSplitWithImage sections={featureSections}/>
 
       </SimpleGrid>
       </Box>

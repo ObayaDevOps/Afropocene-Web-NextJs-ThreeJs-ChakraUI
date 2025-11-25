@@ -22,6 +22,8 @@ import {
     CloseIcon,
     ChevronDownIcon,
     ChevronRightIcon,
+    MoonIcon,
+    SunIcon,
   } from '@chakra-ui/icons';
 
   import NextImage from 'next/image'
@@ -38,12 +40,21 @@ import {
   
   function DarkToggleButton() {
     const { colorMode, toggleColorMode } = useColorMode()
+    const icon = colorMode === 'light' ? <MoonIcon /> : <SunIcon />
+    const label = colorMode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+
     return (
       <header>
       <Script src="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'} py={-1} rounded={'none'} >
-          {colorMode === 'light' ? 'Dark' : 'Light'} Mode
-        </Button>
+        <IconButton
+          onClick={toggleColorMode}
+          size='sm'
+          fontFamily={'Space Mono'}
+          aria-label={label}
+          icon={icon}
+          variant="ghost"
+          rounded="full"
+        />
       </header>
     )
   }
@@ -97,12 +108,32 @@ import theme from './theme';
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
+
             direction={'row'}
             spacing={6}>
+            <NextLink href="https://store.pesapal.com/afropocene" passHref>
+              <Button
+                as="a"
+                mt={1}
+                size="xs"
+                display={{ base: 'none', md: 'flex' }}
+
+                rounded={'none'}
+                fontSize={'sm'}
+                fontWeight={'600'}
+                fontFamily="Space Mono"
+                bg={useColorModeValue('black', 'white')}
+                color={useColorModeValue('white', 'black')}
+                _hover={{
+                  bg: useColorModeValue('gray.700', 'gray.300'),
+                }}>
+                Support Ugandan Art
+              </Button>
+            </NextLink>
             <DarkToggleButton />
           </Stack>
         </Flex>
-  
+
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
@@ -118,7 +149,7 @@ import theme from './theme';
 
   
     return (
-      <Stack direction={'row'} spacing={4} paddingTop={1.5}>
+      <Stack direction={'row'} spacing={4} paddingTop={3}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -208,6 +239,20 @@ import theme from './theme';
         bg={useColorModeValue('white', 'gray.800')}
         p={4}
         display={{ md: 'none' }}>
+        <NextLink href="https://store.pesapal.com/afropocene" passHref>
+          <Button
+            as="a"
+            size="sm"
+            rounded={'none'}
+            fontFamily="Space Mono"
+            bg={useColorModeValue('black', 'white')}
+            color={useColorModeValue('white', 'black')}
+            _hover={{
+              bg: useColorModeValue('gray.700', 'gray.300'),
+            }}>
+            Support Ugandan Art
+          </Button>
+        </NextLink>
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
@@ -314,6 +359,19 @@ import theme from './theme';
           href: '/studios/contact-enquiry',
         },
       ],
+    }, 
+
+
+    {
+      label: 'World Building',
+      href: 'https://worldbuilding.afropocene.com/',
+      // children: [
+      //   {
+      //     label: 'World Building Project',
+      //     subLabel: 'World Building Through Art',
+      //     href: 'https://worldbuilding.afropocene.com/',
+      //   }
+      // ]
     }, 
 
     {
@@ -448,4 +506,3 @@ import theme from './theme';
   ];
 
   
-
