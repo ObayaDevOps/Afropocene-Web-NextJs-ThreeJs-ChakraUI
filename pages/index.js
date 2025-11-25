@@ -4,8 +4,49 @@ import LandingPage from '../components/pageContent/landingPage'
 import Image from 'next/image'
 import HeadImage from '../public/images/icon/africa.png'
 
+import client from '../sanityClient'
+import groq from 'groq'
 
-export default function Home() {
+const landingPageQuery = groq`*[_type == "landingPage"]{
+  title,
+  headingTop,
+  scrollingText1,
+  scrollingText2,
+  scrollingText3,
+  scrollingText4,
+  toastMessage,
+  toastEnabled,
+  subheading,
+  "backgroundImageUrl": backgroundImage.asset->url,
+  whatWeDoTitle1,
+  whatWeDoContentParagraph1,
+  "whatWeDoImage1Url": whoWeDoImage1.asset->url,
+  whatWeDoButtonText1,
+  whatWeDoTitle2,
+  whatWeDoContentParagraph2,
+  "whatWeDoImage2Url": whoWeDoImage2.asset->url,
+  whatWeDoButtonText2,
+  whatWeDoTitle3,
+  whatWeDoContentParagraph3,
+  "whatWeDoImage3Url": whoWeDoImage3.asset->url,
+  whatWeDoButtonText3,
+}`
+
+  export async function getStaticProps() {
+    const landingPageContent = await client.fetch(landingPageQuery);
+
+
+    return {
+      props: {
+        landingPageContent,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
+
+
+export default function Home(props) {
   return (
     <div >
       <Head>
@@ -16,7 +57,7 @@ export default function Home() {
       </Head>
 
       <Box>
-        <LandingPage />
+        <LandingPage pageContent={props.landingPageContent} />
       </Box>
 
     </div>

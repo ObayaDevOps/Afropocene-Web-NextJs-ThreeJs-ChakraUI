@@ -4,18 +4,26 @@ import WithSubnavigation from '../components/utils/navbar'
 import FooterLargeWithNewsletter from '../components/utils/footer' 
 import theme from '../components/utils/theme'
 
+import { SessionProvider } from "next-auth/react";
+
+
+import { Analytics } from '@vercel/analytics/react';
 
 
 function MyApp({ Component, pageProps }) {
-  return (   
-    <ChakraProvider theme={theme}>
+  return (
+      <SessionProvider session={pageProps.session} refetchInterval={0}>
 
-      <WithSubnavigation />
-      <Component {...pageProps} />
-      <FooterLargeWithNewsletter />
+      <ChakraProvider theme={theme}>
+        <WithSubnavigation  {...pageProps} />
+        <Component {...pageProps} />
+        <FooterLargeWithNewsletter />
+        <Analytics />
 
-    </ChakraProvider>
-    )
+      </ChakraProvider>      
+    
+    </SessionProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

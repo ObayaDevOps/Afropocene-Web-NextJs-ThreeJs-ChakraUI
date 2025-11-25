@@ -22,6 +22,8 @@ import {
     CloseIcon,
     ChevronDownIcon,
     ChevronRightIcon,
+    MoonIcon,
+    SunIcon,
   } from '@chakra-ui/icons';
 
   import NextImage from 'next/image'
@@ -33,16 +35,26 @@ import {
   import { MdNightlight } from 'react-icons/md';
   import Script from 'next/script'
 
+//Dynamic Routing for NavBars: https://nextjs.org/learn/basics/dynamic-routes/implement-getstaticpaths
 
   
   function DarkToggleButton() {
     const { colorMode, toggleColorMode } = useColorMode()
+    const icon = colorMode === 'light' ? <MoonIcon /> : <SunIcon />
+    const label = colorMode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+
     return (
       <header>
       <Script src="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'} py={-1} rounded={'none'} >
-          {colorMode === 'light' ? 'Dark' : 'Light'} Mode
-        </Button>
+        <IconButton
+          onClick={toggleColorMode}
+          size='sm'
+          fontFamily={'Space Mono'}
+          aria-label={label}
+          icon={icon}
+          variant="ghost"
+          rounded="full"
+        />
       </header>
     )
   }
@@ -96,12 +108,32 @@ import theme from './theme';
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
+
             direction={'row'}
             spacing={6}>
+            <NextLink href="https://store.pesapal.com/afropocene" passHref>
+              <Button
+                as="a"
+                mt={1}
+                size="xs"
+                display={{ base: 'none', md: 'flex' }}
+
+                rounded={'none'}
+                fontSize={'sm'}
+                fontWeight={'600'}
+                fontFamily="Space Mono"
+                bg={useColorModeValue('black', 'white')}
+                color={useColorModeValue('white', 'black')}
+                _hover={{
+                  bg: useColorModeValue('gray.700', 'gray.300'),
+                }}>
+                Support Ugandan Art
+              </Button>
+            </NextLink>
             <DarkToggleButton />
           </Stack>
         </Flex>
-  
+
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
@@ -117,7 +149,7 @@ import theme from './theme';
 
   
     return (
-      <Stack direction={'row'} spacing={4} paddingTop={1.5}>
+      <Stack direction={'row'} spacing={4} paddingTop={3}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -182,7 +214,7 @@ import theme from './theme';
               {label}
             </Text>
 
-            <Text fontSize={'sm'}>{subLabel}</Text>
+            <Text fontSize={'sm'} fontFamily={'Space Mono'}>{subLabel}</Text>
           </Box>
           <Flex
             transition={'all .3s ease'}
@@ -207,6 +239,20 @@ import theme from './theme';
         bg={useColorModeValue('white', 'gray.800')}
         p={4}
         display={{ md: 'none' }}>
+        <NextLink href="https://store.pesapal.com/afropocene" passHref>
+          <Button
+            as="a"
+            size="sm"
+            rounded={'none'}
+            fontFamily="Space Mono"
+            bg={useColorModeValue('black', 'white')}
+            color={useColorModeValue('white', 'black')}
+            _hover={{
+              bg: useColorModeValue('gray.700', 'gray.300'),
+            }}>
+            Support Ugandan Art
+          </Button>
+        </NextLink>
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
@@ -269,7 +315,10 @@ import theme from './theme';
     );
   };
   
-  
+    //This array should take items from the Sanity List
+  //use the client to fetch the list you want
+
+
   const NAV_ITEMS = [
     {
       label: 'About',
@@ -278,11 +327,6 @@ import theme from './theme';
           label: 'About Afropocene',
           subLabel: '',
           href: '/about/about-us',
-        },
-        {
-          label: 'Artists In Residence',
-          subLabel: 'Past, Present',
-          href: '/about/artists',
         },
         {
           label: 'Press',
@@ -305,25 +349,95 @@ import theme from './theme';
           href: '/studios/kabalagala-studio',
         },
         {
+          label: 'Artists In Residence',
+          subLabel: 'Past, Present',
+          href: '/studios/artists',
+        },
+        {
           label: 'Enquire About Space',
           subLabel: 'Would you like to Create with us ?',
           href: '/studios/contact-enquiry',
         },
       ],
-    },    
+    }, 
+
+
+    {
+      label: 'World Building',
+      href: 'https://worldbuilding.afropocene.com/',
+      // children: [
+      //   {
+      //     label: 'World Building Project',
+      //     subLabel: 'World Building Through Art',
+      //     href: 'https://worldbuilding.afropocene.com/',
+      //   }
+      // ]
+    }, 
+
+    {
+      label: 'The Capsule',
+      children: [
+        {
+          label: 'About The Capsule',
+          subLabel: '',
+          href: '/capsule-gallery/about-capsule',
+        },
+        {
+          label: 'Kobusinge & Komukama - In the Midst',
+          subLabel: 'Currently Showing',
+          href: '/capsule-gallery/in-the-midst-capsule',
+        },
+        {
+          label: 'Henry Robinson - Lela Pit',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/lela-pit-henry-robinson',
+        },
+        {
+          label: 'Emma Prempeh - A Constant Yearning',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/prempeh-constant-yearning-capsule',
+        },
+        {
+          label: 'Kaddu Wasswa - Archive',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/kaddu-wasswa-capsule',
+        },
+        {
+          label: 'Odur Ronald - Republic of This and That',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/republic-of-this-and-that',
+        },
+
+
+        // {
+        //   label: 'Capsule Gallery Archive',
+        //   subLabel: 'Past Exhibitions',
+        //   href: '/capsule-gallery/capsule-archive',
+        // },
+      ],
+    }, 
+    
+    
     {
       label: 'Tech+Art',
       children: [
-        {
-          label: 'VR NFT Gallery',
-          subLabel: '',
-          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
-        },
         {
           label: 'this.',
           subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
           href: '/tech/this',
         },
+        {
+          label: 'UNDP x AFRPCN NFT Gallery',
+          subLabel: 'Proof of Work 2023',
+          href: 'https://oncyber.io/undp-afropocene',
+        },
+        {
+          label: 'VR NFT Gallery',
+          subLabel: '',
+          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
+        },
+
+
         // {
         //   label: '4FR0P0C3N3 43VR',
         //   subLabel: 'Conceptual Blockchain Art',
@@ -331,25 +445,26 @@ import theme from './theme';
         // }
       ],
     },
-    {
+    { //Now need to show how to display the list of items and have links to them
+      //Easy ?
       label: 'Exhibitions',
       // href: '/exhibitions/exhibitions-home',
       children: [
         // {
-        //   label: 'Upcoming/Current',
-        //   subLabel: '',
-        //   href: '/exhibitions/current-exhibition',
+        //   label: 'Proof of Work',
+        //   subLabel: 'UNDP Innovation Prize 2022',
+        //   href: '/exhibitions/undp-proof-of-work',
+        // },
+        // {
+        //   label: 'Dreamcatcher x Generative Dreams',
+        //   subLabel: 'Immersive Volumetric Projection',
+        //   href: '/exhibitions/dreamcatcher-x-generative-dreams',
         // },
         {
           label: 'Exhibition Archive',
-          subLabel: '',
+          subLabel: 'Past Exhibitions',
           href: '/exhibitions/exhibitions-archive',
         },
-        // {
-        //   label: 'Museum Of Selves',
-        //   subLabel: 'Collaborative Exhibition and Youth Workshop',
-        //   href: '/exhibitions/museum-of-selves-exhibition',
-        // }
       ],
     },
 
@@ -357,13 +472,13 @@ import theme from './theme';
       label: 'Workshops',
       children: [
         // {
-        //   label: 'Upcoming/Current',
+        //   label: 'NFT Workshop',
         //   subLabel: '',
-        //   href: '/workshops/current-workshop',
+        //   href: '/workshops/undp-nft-workshop',
         // },
         {
           label: 'Workshop Archive',
-          subLabel: '',
+          subLabel: 'Past Workshops',
           href: '/workshops/workshops-archive',
         }
       ],
@@ -389,3 +504,5 @@ import theme from './theme';
     //   href: '/press',
     // },
   ];
+
+  

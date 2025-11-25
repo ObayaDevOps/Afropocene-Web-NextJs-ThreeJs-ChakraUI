@@ -1,7 +1,10 @@
-import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio } from '@chakra-ui/react'
+import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio, Alert, AlertIcon, useToast } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { useEffect } from "react";
+
 import LandingPageSplitWithImage from '../landingPageSections/feature'
 import acunye from '../../public/images/visting-artists/acunye/Afropocene-Studio-BTS60.jpg'
+import SilkHero from '../landingPageSections/silkHero'
 
 
 const DynamicTypeWriterWithNoSSR = dynamic(
@@ -10,53 +13,108 @@ const DynamicTypeWriterWithNoSSR = dynamic(
   )
 
 
-export default function LandingPage() {
+
+export default function LandingPage(props) {
+  const landingPageContent  = props.pageContent[0] || {};
+
+  console.log('landingPageContent', landingPageContent);
+  const heroBackground = landingPageContent.backgroundImageUrl || '../../../images/backgrounds/MandelbrotLargeDark.jpg';
+  const heroBackgroundImage = `url(${heroBackground})`;
+  const toastMessage = landingPageContent.toastMessage;
+  const showLandingToast = Boolean(landingPageContent.toastEnabled && toastMessage);
+  const typewriterTexts = [
+    landingPageContent.scrollingText1,
+    landingPageContent.scrollingText2,
+    landingPageContent.scrollingText3,
+    landingPageContent.scrollingText4,
+  ].filter(Boolean);
+  const featureSections = [
+    {
+      title: landingPageContent.whatWeDoTitle1,
+      description: landingPageContent.whatWeDoContentParagraph1,
+      imageUrl: landingPageContent.whatWeDoImage1Url,
+      buttonText: landingPageContent.whatWeDoButtonText1,
+      href: '../../../about/about-us',
+    },
+    {
+      title: landingPageContent.whatWeDoTitle2,
+      description: landingPageContent.whatWeDoContentParagraph2,
+      imageUrl: landingPageContent.whatWeDoImage2Url,
+      buttonText: landingPageContent.whatWeDoButtonText2,
+      href: '../../../studios/kabalagala-studio',
+    },
+    {
+      title: landingPageContent.whatWeDoTitle3,
+      description: landingPageContent.whatWeDoContentParagraph3,
+      imageUrl: landingPageContent.whatWeDoImage3Url,
+      buttonText: landingPageContent.whatWeDoButtonText3,
+      href: '../../../tech/this',
+    },
+  ]
+  // Ensure empty schema items don't render blank blocks
+  .filter(section => section.title || section.description || section.imageUrl);
 
 
+
+
+  // /https://stackoverflow.com/questions/58314040/how-can-i-show-a-chakra-ui-toast-programmatically
+  const toast = useToast();
+  const id = 'landing-toast'
+
+
+  useEffect(() => {
+    if (!showLandingToast) return;
+
+    toast({
+      title: toastMessage,
+      id,
+      status: "info",
+      position: "bottom",
+      duration: 12000,
+      isClosable: true,
+      containerStyle: { fontFamily: 'Space Mono' }
+    });
+  }, [showLandingToast, toastMessage, toast]);
+  
+  
   return (
     <Box>
+      
+      {/* <Alert status='info' variant='left-accent'>
+      <AlertIcon />
+      Click here to see latest Workshop/Exhibition 
+      </Alert> */}
+      {/* <CustomToastExample /> */}
+
+      {/* Animated Silk hero */}
+      {/* <Box px={{ base: 4, md: 8 }} py={{ base: 4, md: 8 }}>
+        <SilkHero headline={landingPageContent.headingTop} />
+      </Box> */}
 
     <SimpleGrid
     columns={1}
     spacing={{ base: 8, md: 10 }}
-    // py={{ base: 0, md: 0, lg:0 }}
     >
-
-      {/* backgroundImage={'../../../images/visting-artists/acunye/Afropocene-Studio-Acunye-darkened.jpg'}
-      Mandelbrot-small.jpg
-      recursiveperlinnoise2.png
-              <Box minHeight='100vh'  bgPosition="left"  backgroundImage={'../../../images/backgrounds/recursivePerlinNoise.png'}
-        <Box minHeight='100vh' bgRepeat="no-repeat" bgSize="100%" bgPosition="fixed"  width="100%" height="auto" backgroundImage={'../../../images/backgrounds/MandelbrotLarge.jpg'}>
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" filter="brightness(60%)" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
-
-      */}
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}>
-        {/* <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" > */}
- 
-
+        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" 
+        backgroundImage={{base: heroBackgroundImage, lg: heroBackgroundImage }}
+        
+        >
             <Center p={{sm:1 , md:10}} >
                 <Heading
                  as='h1'
                  size='3xl'
-                //  fontSize = '6xl'
                 textAlign="center"
-                //  sx={{
-                //   background: "linear-gradient(90deg, #1652f0 20%, #b9cbfb 70.35%)",
-                //   WebkitBackgroundClip: "text",
-                //   WebkitTextFillColor: "transparent"
-                // }}
                 color="white"
                 pt={{base: 10, md: 20}}
                 pb={{base: 5}}
                  >
-                   Afropocene StudioLab
+                   {landingPageContent.headingTop}
                 </Heading>
             </Center>
 
             {/* Scrolling Text */}
-            <Container maxW='md' centerContent     zIndex={1}
->
-                <DynamicTypeWriterWithNoSSR/>
+            <Container maxW='md' centerContent     zIndex={1}>
+                <DynamicTypeWriterWithNoSSR multiText={typewriterTexts}/>
             </Container>
 
         </Box>
@@ -76,7 +134,7 @@ export default function LandingPage() {
           </Heading>
       </Center>
 
-        <LandingPageSplitWithImage />
+        <LandingPageSplitWithImage sections={featureSections}/>
 
       </SimpleGrid>
       </Box>
