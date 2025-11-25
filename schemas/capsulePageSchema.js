@@ -105,13 +105,13 @@ export default defineType({
       type: 'boolean',
       initialValue: false,
     }),
-    defineField({
-      name: 'moveToArchive',
-      title: 'Move to Archive of Past Capsules',
-      type: 'boolean',
-      description: 'Toggle to flag this capsule for the archive listing.',
-      initialValue: false,
-    }),
+    // defineField({
+    //   name: 'moveToArchive',
+    //   title: 'Move to Archive of Past Capsules',
+    //   type: 'boolean',
+    //   description: 'Toggle to flag this capsule for the archive listing.',
+    //   initialValue: false,
+    // }),
     // Archive + list data
     defineField({
       name: 'featuresList',
