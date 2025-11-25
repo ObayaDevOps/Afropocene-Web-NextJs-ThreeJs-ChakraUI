@@ -34,6 +34,8 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
 
   const hasGallery = Array.isArray(galleryImages) && galleryImages.length > 0
   const heroImg = heroImage?.src ? heroImage : null
+  const metaColor = useColorModeValue('gray.900', 'gray.400')
+  const captionColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
     <Container maxW={'7xl'}>
@@ -58,7 +60,7 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
                 {artistName ? `${artistName}: ${exhibitionName}` : exhibitionName}
               </Heading>
               <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
+                color={metaColor}
                 fontWeight={300}
                 fontSize={{ base: 'lg', md: 'xl' }}
                 fontFamily={'Space Mono'}>
@@ -77,7 +79,7 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
                   blurDataURL={heroImg.src}
                 />
                 {heroImageCaption ? (
-                  <Text fontSize="sm" mt={2} color={useColorModeValue('gray.600', 'gray.400')}>
+                  <Text fontSize="sm" mt={2} color={captionColor}>
                     {heroImageCaption}
                   </Text>
                 ) : null}
