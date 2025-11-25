@@ -14,6 +14,8 @@ const landingPageQuery = groq`*[_type == "landingPage"]{
   scrollingText2,
   scrollingText3,
   scrollingText4,
+  toastMessage,
+  toastEnabled,
   subheading,
   "backgroundImageUrl": backgroundImage.asset->url,
   whatWeDoTitle1,

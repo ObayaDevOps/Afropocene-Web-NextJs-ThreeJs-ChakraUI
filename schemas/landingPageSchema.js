@@ -34,6 +34,19 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'toastMessage',
+      title: 'Toast Message',
+      type: 'string',
+      description: 'Optional message for the homepage toast.',
+    }),
+    defineField({
+      name: 'toastEnabled',
+      title: 'Show Toast',
+      type: 'boolean',
+      description: 'Toggle the homepage toast on/off.',
+      initialValue: false,
+    }),
+    defineField({
       name: 'scrollingText1',
       title: 'scrollingText1',
       type: 'string',

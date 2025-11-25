@@ -17,10 +17,11 @@ const DynamicTypeWriterWithNoSSR = dynamic(
 export default function LandingPage(props) {
   const landingPageContent  = props.pageContent[0] || {};
 
-console.log('landingPageContent:', landingPageContent)
-
+  console.log('landingPageContent', landingPageContent);
   const heroBackground = landingPageContent.backgroundImageUrl || '../../../images/backgrounds/MandelbrotLargeDark.jpg';
   const heroBackgroundImage = `url(${heroBackground})`;
+  const toastMessage = landingPageContent.toastMessage;
+  const showLandingToast = Boolean(landingPageContent.toastEnabled && toastMessage);
   const typewriterTexts = [
     landingPageContent.scrollingText1,
     landingPageContent.scrollingText2,
@@ -58,15 +59,14 @@ console.log('landingPageContent:', landingPageContent)
 
   // /https://stackoverflow.com/questions/58314040/how-can-i-show-a-chakra-ui-toast-programmatically
   const toast = useToast();
-  const id = 'test-toast'
-  const showLandingToast = false; // toggle to false to disable
+  const id = 'landing-toast'
 
 
   useEffect(() => {
     if (!showLandingToast) return;
 
     toast({
-      title: "Currently at The Capsule: Obulo Bwaffe Festival",
+      title: toastMessage,
       id,
       status: "info",
       position: "bottom",
@@ -74,7 +74,7 @@ console.log('landingPageContent:', landingPageContent)
       isClosable: true,
       containerStyle: { fontFamily: 'Space Mono' }
     });
-  }, []);
+  }, [showLandingToast, toastMessage, toast]);
   
   
   return (
@@ -97,8 +97,6 @@ console.log('landingPageContent:', landingPageContent)
     >
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" 
         backgroundImage={{base: heroBackgroundImage, lg: heroBackgroundImage }}
-        
-
         
         >
             <Center p={{sm:1 , md:10}} >
