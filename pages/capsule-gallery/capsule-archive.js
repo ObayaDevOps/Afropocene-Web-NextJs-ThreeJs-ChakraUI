@@ -239,7 +239,7 @@ const ExhibitionList = ({exhibitionPage}) => {
 
 
 //I wanr the query to return all the info
-const query = groq`*[_type == "exhibitionPage"]{
+const query = groq`*[_type == "capsulePage"]{
   exhibitionName,
   artistName,
   exhibitionStartDate,

@@ -16,6 +16,7 @@ import {
     useColorMode,
     useDisclosure,
   } from '@chakra-ui/react';
+  import React, { useState, useEffect, useMemo } from 'react';
 
   import {
     HamburgerIcon,
@@ -32,8 +33,9 @@ import {
   
 
   import NextLink from 'next/link'
-  import { MdNightlight } from 'react-icons/md';
   import Script from 'next/script'
+  import client from '../../sanityClient'
+  import groq from 'groq'
 
 //Dynamic Routing for NavBars: https://nextjs.org/learn/basics/dynamic-routes/implement-getstaticpaths
 
@@ -66,6 +68,49 @@ import theme from './theme';
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode()
+    const [capsuleNavItems, setCapsuleNavItems] = useState([])
+
+    useEffect(() => {
+      const fetchCapsuleNav = async () => {
+        try {
+          const capsuleQuery = groq`*[_type == "capsulePage"] | order(currentlyActiveExhibition desc, exhibitionStartDate desc){
+            exhibitionName,
+            "slug": slug.current,
+            currentlyActiveExhibition
+          }`
+
+          console.log();
+          const results = await client.fetch(capsuleQuery)
+          const mapped = results
+            .filter((item) => item?.slug)
+            .map((item) => ({
+              label: item.exhibitionName,
+              subLabel: item.currentlyActiveExhibition ? 'Currently Showing' : 'Past Exhibition',
+              href: `/capsule-gallery/${item.slug}`,
+            }))
+          setCapsuleNavItems(mapped)
+        } catch (err) {
+          console.error('Failed to fetch capsule nav items', err)
+        }
+      }
+      fetchCapsuleNav()
+    }, [])
+
+    const navItems = useMemo(() => {
+      return BASE_NAV_ITEMS.map((item) => {
+        if (item.label !== 'The Capsule') return item
+        const aboutChild = item.children.find((child) => child.label === 'About The Capsule')
+        const remainingStatic = item.children.filter((child) => child.label !== 'About The Capsule')
+        return {
+          ...item,
+          children: [
+            ...(aboutChild ? [aboutChild] : []),
+            ...capsuleNavItems,
+            ...remainingStatic,
+          ],
+        }
+      })
+    }, [capsuleNavItems])
   
     return (
       <Box>
@@ -101,7 +146,7 @@ import theme from './theme';
           </NextLink>
 
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-              <DesktopNav />
+              <DesktopNav navItems={navItems} />
             </Flex>
           </Flex>
   
@@ -135,13 +180,13 @@ import theme from './theme';
         </Flex>
 
         <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
+          <MobileNav navItems={navItems} />
         </Collapse>
       </Box>
     );
   }
   
-  const DesktopNav = () => {
+  const DesktopNav = ({ navItems }) => {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -150,7 +195,7 @@ import theme from './theme';
   
     return (
       <Stack direction={'row'} spacing={4} paddingTop={3}>
-        {NAV_ITEMS.map((navItem) => (
+        {navItems.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <NextLink href={navItem.href ?? '#'} passHref>
@@ -233,7 +278,7 @@ import theme from './theme';
     );
   };
   
-  const MobileNav = () => {
+  const MobileNav = ({ navItems }) => {
     return (
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
@@ -253,7 +298,7 @@ import theme from './theme';
             Support Ugandan Art
           </Button>
         </NextLink>
-        {NAV_ITEMS.map((navItem) => (
+        {navItems.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
       </Stack>
@@ -319,7 +364,7 @@ import theme from './theme';
   //use the client to fetch the list you want
 
 
-  const NAV_ITEMS = [
+  const BASE_NAV_ITEMS = [
     {
       label: 'About',
       children: [
@@ -340,6 +385,53 @@ import theme from './theme';
         // },
       ],
     },
+
+    {
+      label: 'The Capsule',
+      children: [
+        {
+          label: 'About The Capsule',
+          subLabel: '',
+          href: '/capsule-gallery/about-capsule',
+        },
+        {
+          label: 'Kobusinge & Komukama - In the Midst',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/in-the-midst-capsule',
+        },
+        {
+          label: 'Henry Robinson - Lela Pit',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/lela-pit-henry-robinson',
+        },
+        {
+          label: 'Emma Prempeh - A Constant Yearning',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/prempeh-constant-yearning-capsule',
+        },
+        {
+          label: 'Kaddu Wasswa - Archive',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/kaddu-wasswa-capsule',
+        },
+        {
+          label: 'Odur Ronald - Republic of This and That',
+          subLabel: 'Previous Showing',
+          href: '/capsule-gallery/republic-of-this-and-that',
+        },
+
+
+        // {
+        //   label: 'Capsule Gallery Archive',
+        //   subLabel: 'Past Exhibitions',
+        //   href: '/capsule-gallery/capsule-archive',
+        // },
+      ],
+    }, 
+    
+
+
+
     {
       label: 'Studio Space',
       children: [
@@ -374,49 +466,7 @@ import theme from './theme';
       // ]
     }, 
 
-    {
-      label: 'The Capsule',
-      children: [
-        {
-          label: 'About The Capsule',
-          subLabel: '',
-          href: '/capsule-gallery/about-capsule',
-        },
-        {
-          label: 'Kobusinge & Komukama - In the Midst',
-          subLabel: 'Currently Showing',
-          href: '/capsule-gallery/in-the-midst-capsule',
-        },
-        {
-          label: 'Henry Robinson - Lela Pit',
-          subLabel: 'Previous Showing',
-          href: '/capsule-gallery/lela-pit-henry-robinson',
-        },
-        {
-          label: 'Emma Prempeh - A Constant Yearning',
-          subLabel: 'Previous Showing',
-          href: '/capsule-gallery/prempeh-constant-yearning-capsule',
-        },
-        {
-          label: 'Kaddu Wasswa - Archive',
-          subLabel: 'Previous Showing',
-          href: '/capsule-gallery/kaddu-wasswa-capsule',
-        },
-        {
-          label: 'Odur Ronald - Republic of This and That',
-          subLabel: 'Previous Showing',
-          href: '/capsule-gallery/republic-of-this-and-that',
-        },
 
-
-        // {
-        //   label: 'Capsule Gallery Archive',
-        //   subLabel: 'Past Exhibitions',
-        //   href: '/capsule-gallery/capsule-archive',
-        // },
-      ],
-    }, 
-    
     
     {
       label: 'Tech+Art',
