@@ -39,21 +39,21 @@ import groq from 'groq'
   
 
 const exhibitionDetails = [
-  {
-    exhibitionName: 'Muwawa',
-    artistName: 'Odur',
-    startDate: '2021-04-06',
-    endDate: '2021-04-06',
-    headerExhibition: true,
-    active: true,
-    blogTags: ['Installation', 'Sculpture', 'Aluminium'],
-    exhibitionDescription:"Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. ",
-    photo: odurMuwawaPhoto,
-    artistPFP: odurPFP,
-    linkToExhibition: '/exhibitions/odur-muwawa-exhibition',
-    followLink:
-        'https://www.instagram.com/afropocene/',
-  },
+  // {
+  //   exhibitionName: 'Muwawa',
+  //   artistName: 'Odur',
+  //   startDate: '2021-04-06',
+  //   endDate: '2021-04-06',
+  //   headerExhibition: true,
+  //   active: true,
+  //   blogTags: ['Installation', 'Sculpture', 'Aluminium'],
+  //   exhibitionDescription:"Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. ",
+  //   photo: odurMuwawaPhoto,
+  //   artistPFP: odurPFP,
+  //   linkToExhibition: '/exhibitions/odur-muwawa-exhibition',
+  //   followLink:
+  //       'https://www.instagram.com/afropocene/',
+  // },
   {
     exhibitionName: 'Book of Owaz',
     artistName: 'Kharumwa',
@@ -69,21 +69,21 @@ const exhibitionDetails = [
     followLink:
         'https://www.instagram.com/afropocene/',
   },
-  {
-    exhibitionName: 'Ready For Export',
-    artistName: 'Aloka',
-    startDate: '2021-04-06',
-    endDate: '2021-04-06',
-    headerExhibition: true,
-    active: true,
-    blogTags: ['Installation','Sack', 'Oil Paint'],
-    exhibitionDescription:"An export clearance area as an inquiry into migratory labour practices among young people.",
-    photo: alokaPhoto2,
-    artistPFP: odurPFP,
-    linkToExhibition: '/exhibitions/aloka-ready-for-export-exhibition',
-    followLink:
-        'https://www.instagram.com/afropocene/',
-  },
+  // {
+  //   exhibitionName: 'Ready For Export',
+  //   artistName: 'Aloka',
+  //   startDate: '2021-04-06',
+  //   endDate: '2021-04-06',
+  //   headerExhibition: true,
+  //   active: true,
+  //   blogTags: ['Installation','Sack', 'Oil Paint'],
+  //   exhibitionDescription:"An export clearance area as an inquiry into migratory labour practices among young people.",
+  //   photo: alokaPhoto2,
+  //   artistPFP: odurPFP,
+  //   linkToExhibition: '/exhibitions/aloka-ready-for-export-exhibition',
+  //   followLink:
+  //       'https://www.instagram.com/afropocene/',
+  // },
   {
     exhibitionName: 'Museum Of Selves',
     artistName: 'Allan Kyakonye',
@@ -138,9 +138,10 @@ export const BlogAuthor = (props) => {
 };
 
 const BlogTags = (props) => {
+  const tags = props.tags || []
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
+      {tags.map((tag) => {
         return (
           <Tag size={'md'} variant="solid" colorScheme="blue" key={tag}>
             {tag}
@@ -159,7 +160,7 @@ function ExhibitionCard(props) {
   // console.log(props)
 
 
-  const {exhibitionName,artistName,exhibitionStartDate, featuresList, archivePageDisplayShortDescription,
+  const {exhibitionName,artistName,exhibitionStartDate, featuresList = [], archivePageDisplayShortDescription,
      archiveDisplayImage, slug
     } = props;  
 
@@ -227,7 +228,7 @@ const ExhibitionList = ({exhibitionPage}) => {
           mt={16}
           mx={'auto'}>
           {exhibitionPage.map((cardInfo, index) => (
-            <ExhibitionCard {...cardInfo} index={index} key={index} />
+            <ExhibitionCard {...cardInfo} index={index} key={cardInfo.slug || index} />
           ))}
         </SimpleGrid>
     </Container>
@@ -251,9 +252,29 @@ const query = groq`*[_type == "exhibitionPage"]{
 
 
 export async function getStaticProps(context) {
-  const exhibitionPage = await client.fetch(
-      query    
-  )
+  const exhibitionPageSanity = await client.fetch(query)
+  const normalizedSanity = (exhibitionPageSanity || [])
+    .filter((item) => item?.archiveDisplayImage && item?.slug)
+    .map((item) => ({
+      ...item,
+      slug: `/exhibitions/${item.slug}`,
+    }))
+
+  const staticNormalized = exhibitionDetails.map((item) => ({
+    exhibitionName: item.exhibitionName,
+    artistName: item.artistName,
+    exhibitionStartDate: item.startDate,
+    featuresList: item.blogTags || [],
+    archivePageDisplayShortDescription: item.exhibitionDescription,
+    archiveDisplayImage: item.photo?.src || item.photo,
+    slug: item.linkToExhibition || item.slug || '#',
+  }))
+
+  const exhibitionPage = [...staticNormalized, ...normalizedSanity].sort((a, b) => {
+    const aDate = a.exhibitionStartDate ? new Date(a.exhibitionStartDate).getTime() : 0
+    const bDate = b.exhibitionStartDate ? new Date(b.exhibitionStartDate).getTime() : 0
+    return bDate - aDate
+  })
 
   // console.log("RETURNR2")
   // console.log(exhibitionPage)

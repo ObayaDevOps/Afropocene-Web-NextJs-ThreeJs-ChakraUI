@@ -85,9 +85,10 @@ export const BlogAuthor = (props) => {
 };
 
 const BlogTags = (props) => {
+  const tags = props.tags || []
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
+      {tags.map((tag) => {
         return (
           <Tag size={'md'} variant="solid" colorScheme="blue" key={tag}>
             {tag}
@@ -107,7 +108,7 @@ function WorkshopCard(props) {
 
 
 
-  const {workshopName,artistName,workshopStartDate, featuresList, archivePageDisplayShortDescription,
+  const {workshopName,artistName,workshopStartDate, featuresList = [], archivePageDisplayShortDescription,
      archiveDisplayImage, slug
     } = props;  
 
@@ -175,7 +176,7 @@ const WorkshopList = ({workshopPage}) => {
           mt={16}
           mx={'auto'}>
           {workshopPage.map((cardInfo, index) => (
-            <WorkshopCard {...cardInfo} index={index} key={index} />
+            <WorkshopCard {...cardInfo} index={index} key={cardInfo.slug || index} />
           ))}
         </SimpleGrid>
     </Container>
@@ -197,9 +198,13 @@ const query = groq`*[_type == "workshopPage"]{
 
 
 export async function getStaticProps(context) {
-  const workshopPage = await client.fetch(
-      query    
-  )
+  const workshopPageSanity = await client.fetch(query)
+  const workshopPage = (workshopPageSanity || [])
+    .filter((item) => item?.archiveDisplayImage && item?.slug)
+    .map((item) => ({
+      ...item,
+      slug: `/workshops/${item.slug}`,
+    }))
 
   // console.log("RETURNR2")
   // console.log(workshopPage)

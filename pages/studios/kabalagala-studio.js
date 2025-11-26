@@ -34,7 +34,7 @@ import groq from 'groq'
     console.log("HERE ===============================");
     console.log(props.aboutStudioLabPage);
 
-    const {title,subTitle, slideShowImages, introText, paragraphDescription 
+  const {title,subTitle, slideShowImages, introText, paragraphDescription 
      } = props.aboutStudioLabPage;  
  
 
@@ -66,7 +66,8 @@ import groq from 'groq'
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'1xl'}>
+                fontSize={'1xl'}
+                fontFamily={'Space Mono'}>
                 {subTitle}
               </Text>
             </Box>
@@ -83,10 +84,11 @@ import groq from 'groq'
                 <Text
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
-                  fontWeight={'300'}>
+                  fontWeight={'300'}
+                  fontFamily={'Space Mono'}>
                     {introText}
                 </Text>
-                <Text fontSize={'lg'}>
+                <Text fontSize={'lg'} fontFamily={'Space Mono'}>
                   {paragraphDescription}
                 </Text>
               </VStack>
@@ -98,7 +100,8 @@ import groq from 'groq'
             <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'2xl'}>
+                fontSize={'2xl'}
+                fontFamily={'Space Mono'}>
                 Come Visit Us!
               </Text>
   

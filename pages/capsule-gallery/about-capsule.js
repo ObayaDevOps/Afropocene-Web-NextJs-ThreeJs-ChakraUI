@@ -18,6 +18,8 @@ import {
   import Head from 'next/head'
   import NextLink from 'next/link'
   import NextImage from 'next/image'
+  import groq from 'groq'
+  import client from '../../sanityClient'
 
   
   const SocialButton = ({
@@ -48,22 +50,33 @@ import {
   };
   
 
-  export default function WithBackgroundImage() {
+  export default function WithBackgroundImage({ pageData }) {
 
-    const capsuleLogoBlack = "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg";
-    const capsuleLogoWhite = "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699627533/Black_White_Minimalist_Business_Logo_3_jmyrq6.svg";
+    const capsuleLogoBlack = pageData?.capsuleLogoLightUrl || "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699610171/Black_White_Minimalist_Business_Logo_1_-cropped_drtg6a.svg";
+    const capsuleLogoWhite = pageData?.capsuleLogoDarkUrl || "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699627533/Black_White_Minimalist_Business_Logo_3_jmyrq6.svg";
 
     const { colorMode, toggleColorMode } = useColorMode()
+    const headline = pageData?.heroText || `The Capsule is an Independent Public Arts Platform established in 2023 by the Afropocene StudioLab dedicated
+                to exploring experimental, immersive and alternative exhibition formats in Kampala.
+                ​`
+    const primaryCtaText = pageData?.primaryCtaText || 'Show me More'
+    const primaryCtaUrl = pageData?.primaryCtaUrl || 'https://www.afropocene.com/capsule-gallery/republic-of-this-and-that'
+    const secondaryCtaText = pageData?.secondaryCtaText || 'Visit The Capsule'
+    const secondaryCtaUrl = pageData?.secondaryCtaUrl || 'https://maps.app.goo.gl/dbMRW9oX3nP6UjZB7'
+    const instagramUrl = pageData?.instagramUrl || 'https://www.instagram.com/afropocenethecapsule/'
+    const backgroundImageUrl = pageData?.backgroundImageUrl
+      ? `url(${pageData.backgroundImageUrl})`
+      : undefined
 
     return (
       <Flex
         w={'full'}
         minH={'100vh'}
-        // backgroundImage={'../../../../images/backgrounds/mandelbrot.jpg'        }
+        backgroundImage={backgroundImageUrl}
         backgroundSize={'fit'}
         backgroundPosition={'center center'}>
         <Head>
-        <title>About The Capsule: Afropocene StudioLab</title>
+        <title>{pageData?.title || 'About The Capsule: Afropocene StudioLab'}</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -96,9 +109,7 @@ import {
               
               >
 
-                The Capsule is an Independent Public Arts Platform established in 2023 by the Afropocene StudioLab dedicated
-                to exploring experimental, immersive and alternative exhibition formats in Kampala.
-                ​
+                {headline}
                 </Text>
                 </Box>
                 
@@ -107,7 +118,7 @@ import {
             paddingBottom={useBreakpointValue({base: '5em', md: '0'})}
 
             >
-              <NextLink href="https://www.afropocene.com/capsule-gallery/republic-of-this-and-that" passHref>
+              <NextLink href={primaryCtaUrl} passHref>
               <Button
                 bg={useColorModeValue('black', 'white')}
                 rounded={'full'}
@@ -116,22 +127,24 @@ import {
                 _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
                 mt={{base:14}}
                 >
-                Show me More
+                {primaryCtaText}
               </Button>
               </NextLink>
 
-              <NextLink href="https://maps.app.goo.gl/dbMRW9oX3nP6UjZB7" passHref>
-              <Button
-                bg={useColorModeValue('black', 'white')}
-                rounded={'full'}
-                color={useColorModeValue('white', 'black')}
-                fontFamily={'Space Mono'}
-                _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
-                mt={{base:14}}
-                >
-                Visit The Capsule
-              </Button>
-              </NextLink>
+              {secondaryCtaUrl && secondaryCtaText && (
+                <NextLink href={secondaryCtaUrl} passHref>
+                <Button
+                  bg={useColorModeValue('black', 'white')}
+                  rounded={'full'}
+                  color={useColorModeValue('white', 'black')}
+                  fontFamily={'Space Mono'}
+                  _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
+                  mt={{base:14}}
+                  >
+                  {secondaryCtaText}
+                </Button>
+                </NextLink>
+              )}
 
 
 
@@ -139,7 +152,7 @@ import {
           </Stack>
 
           <Box pt={{base: -26, md:4}} pb={{md: 12}}>
-          <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocenethecapsule/'}>
+          <SocialButton label={'Instagram'} href={instagramUrl}>
                   <FaInstagram />
                 </SocialButton>
           </Box>
@@ -149,3 +162,27 @@ import {
       </Flex>
     );
   }
+
+const query = groq`*[_type == "aboutCapsulePage"][0]{
+  title,
+  heroText,
+  primaryCtaText,
+  primaryCtaUrl,
+  secondaryCtaText,
+  secondaryCtaUrl,
+  instagramUrl,
+  "capsuleLogoLightUrl": capsuleLogoLight.asset->url,
+  "capsuleLogoDarkUrl": capsuleLogoDark.asset->url,
+  "backgroundImageUrl": backgroundImage.asset->url
+}`
+
+export async function getStaticProps() {
+  const pageData = await client.fetch(query)
+
+  return {
+    props: {
+      pageData: pageData || null,
+    },
+    revalidate: 10,
+  }
+}
