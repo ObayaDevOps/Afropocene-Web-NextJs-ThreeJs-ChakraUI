@@ -56,6 +56,10 @@ import {
     const capsuleLogoWhite = pageData?.capsuleLogoDarkUrl || "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1699627533/Black_White_Minimalist_Business_Logo_3_jmyrq6.svg";
 
     const { colorMode, toggleColorMode } = useColorMode()
+    const buttonBg = useColorModeValue('black', 'white')
+    const buttonColor = useColorModeValue('white', 'black')
+    const buttonHoverBg = useColorModeValue('blackAlpha.600', 'whiteAlpha.500')
+    const textColor = useColorModeValue('black', 'white')
     const headline = pageData?.heroText || `The Capsule is an Independent Public Arts Platform established in 2023 by the Afropocene StudioLab dedicated
                 to exploring experimental, immersive and alternative exhibition formats in Kampala.
                 ​`
@@ -99,7 +103,7 @@ import {
 
             <Box>
             <Text
-              color={useColorModeValue('black', 'white')}
+              color={textColor}
               fontWeight={700}
               lineHeight={1.2}
               textAlign={'center'}
@@ -120,11 +124,11 @@ import {
             >
               <NextLink href={primaryCtaUrl} passHref>
               <Button
-                bg={useColorModeValue('black', 'white')}
+                bg={buttonBg}
                 rounded={'full'}
-                color={useColorModeValue('white', 'black')}
+                color={buttonColor}
                 fontFamily={'Space Mono'}
-                _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
+                _hover={{ bg: buttonHoverBg }}
                 mt={{base:14}}
                 >
                 {primaryCtaText}
@@ -134,11 +138,11 @@ import {
               {secondaryCtaUrl && secondaryCtaText && (
                 <NextLink href={secondaryCtaUrl} passHref>
                 <Button
-                  bg={useColorModeValue('black', 'white')}
+                  bg={buttonBg}
                   rounded={'full'}
-                  color={useColorModeValue('white', 'black')}
+                  color={buttonColor}
                   fontFamily={'Space Mono'}
-                  _hover={{ bg: useColorModeValue('blackAlpha.600', 'whiteAlpha.500') }}
+                  _hover={{ bg: buttonHoverBg }}
                   mt={{base:14}}
                   >
                   {secondaryCtaText}
