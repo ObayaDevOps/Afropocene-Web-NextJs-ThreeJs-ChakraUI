@@ -69,9 +69,10 @@ import theme from './theme';
     const { isOpen, onToggle } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode()
     const [capsuleNavItems, setCapsuleNavItems] = useState([])
+    const [exhibitionNavItems, setExhibitionNavItems] = useState([])
 
     useEffect(() => {
-      const fetchCapsuleNav = async () => {
+      const fetchDynamicNav = async () => {
         try {
           const capsuleQuery = groq`*[_type == "capsulePage"] | order(currentlyActiveExhibition desc, exhibitionStartDate desc){
             exhibitionName,
@@ -79,38 +80,68 @@ import theme from './theme';
             currentlyActiveExhibition
           }`
 
-          console.log();
-          const results = await client.fetch(capsuleQuery)
-          const mapped = results
+          const exhibitionQuery = groq`*[_type == "exhibitionPage" && currentlyActiveExhibition == true] | order(exhibitionStartDate desc){
+            exhibitionName,
+            "slug": slug.current,
+            currentlyActiveExhibition,
+            subTitle
+          }`
+
+          const [capsuleResults, exhibitionResults] = await Promise.all([
+            client.fetch(capsuleQuery),
+            client.fetch(exhibitionQuery),
+          ])
+
+          const mappedCapsule = (capsuleResults || [])
             .filter((item) => item?.slug)
             .map((item) => ({
               label: item.exhibitionName,
               subLabel: item.currentlyActiveExhibition ? 'Currently Showing' : 'Past Exhibition',
               href: `/capsule-gallery/${item.slug}`,
             }))
-          setCapsuleNavItems(mapped)
+          const mappedExhibitions = (exhibitionResults || [])
+            .filter((item) => item?.slug)
+            .map((item) => ({
+              label: item.exhibitionName,
+              subLabel: item.subTitle || 'Currently Showing',
+              href: `/exhibitions/${item.slug}`,
+            }))
+          setCapsuleNavItems(mappedCapsule)
+          setExhibitionNavItems(mappedExhibitions)
         } catch (err) {
-          console.error('Failed to fetch capsule nav items', err)
+          console.error('Failed to fetch dynamic nav items', err)
         }
       }
-      fetchCapsuleNav()
+      fetchDynamicNav()
     }, [])
 
     const navItems = useMemo(() => {
       return BASE_NAV_ITEMS.map((item) => {
-        if (item.label !== 'The Capsule') return item
-        const aboutChild = item.children.find((child) => child.label === 'About The Capsule')
-        const remainingStatic = item.children.filter((child) => child.label !== 'About The Capsule')
-        return {
-          ...item,
-          children: [
-            ...(aboutChild ? [aboutChild] : []),
-            ...capsuleNavItems,
-            ...remainingStatic,
-          ],
+        if (item.label === 'The Capsule') {
+          const aboutChild = item.children.find((child) => child.label === 'About The Capsule')
+          const remainingStatic = item.children.filter((child) => child.label !== 'About The Capsule')
+          return {
+            ...item,
+            children: [
+              ...(aboutChild ? [aboutChild] : []),
+              ...capsuleNavItems,
+              ...remainingStatic,
+            ],
+          }
         }
+
+        if (item.label === 'Exhibitions') {
+          return {
+            ...item,
+            children: [
+              ...exhibitionNavItems,
+              ...(item.children || []),
+            ],
+          }
+        }
+        return item
       })
-    }, [capsuleNavItems])
+    }, [capsuleNavItems, exhibitionNavItems])
   
     return (
       <Box>

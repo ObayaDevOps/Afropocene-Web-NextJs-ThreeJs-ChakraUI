@@ -29,6 +29,12 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'currentlyActiveExhibition',
+      title: 'Currently Active ?',
+      type: 'boolean',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'exhibitionName',
       title: 'Exhibition Name',
       type: 'string',
@@ -96,12 +102,6 @@ export default defineType({
 
 
       //Display Parameters
-      defineField({
-        name: 'currentlyActiveExhibition',
-        title: 'Currently Active ?',
-        type: 'boolean',
-        validation: (rule) => rule.required(),
-      }),
       defineField({
         name: 'dropDownMenuOneLiner',
         title: 'Drop Down Menu One Liner',
