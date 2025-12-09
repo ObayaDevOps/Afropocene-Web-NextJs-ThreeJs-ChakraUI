@@ -34,7 +34,6 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
 
   const hasGallery = Array.isArray(galleryImages) && galleryImages.length > 0
   const heroImg = heroImage?.src ? heroImage : null
-  const metaColor = useColorModeValue('gray.900', 'gray.400')
   const captionColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
@@ -51,8 +50,8 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
         py={{ base: 18, md: 24, lg: 0 }}>
         <Flex />
         <Stack spacing={{ base: 6, md: 10 }}>
-          <HStack alignItems="flex-start" spacing={{ base: 6, lg: 10 }}>
-            <Box as={'header'} flex="1">
+          <HStack>
+            <Box as={'header'}>
               <Heading
                 lineHeight={1.1}
                 fontWeight={600}
@@ -60,7 +59,7 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
                 {artistName ? `${artistName}: ${exhibitionName}` : exhibitionName}
               </Heading>
               <Text
-                color={metaColor}
+                color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={{ base: 'lg', md: 'xl' }}
                 fontFamily={'Space Mono'}>
@@ -69,17 +68,17 @@ const CapsuleExhibition = ({ exhibitionPage }) => {
             </Box>
 
             {heroImg && (
-              <Box flex="1" maxW={{ base: '100%', md: '50%' }}>
+              <Box>
                 <NextImage
                   src={heroImg.src}
                   alt={heroImageAlt || exhibitionName || 'Capsule hero'}
-                  width={heroImg.width || 1440}
-                  height={heroImg.height || 1800}
+                  width={1440}
+                  height={1800}
                   placeholder="blur"
                   blurDataURL={heroImg.src}
                 />
                 {heroImageCaption ? (
-                  <Text fontSize="sm" mt={2} color={captionColor}>
+                  <Text fontSize="sm" mt={2} color={captionColor} fontFamily={'Space Mono'}>
                     {heroImageCaption}
                   </Text>
                 ) : null}
@@ -165,7 +164,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking',
+    fallback: false,
   }
 }
 
